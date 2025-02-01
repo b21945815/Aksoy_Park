@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 import Products from '../pages/Products'
 import styled from 'styled-components'
 import { AnimatePresence } from 'framer-motion';
+import FloatingButtons from './FloatingButtons';
 
 const StyledAppLayout = styled.div`
   display: grid;
@@ -61,6 +62,7 @@ function AppLayout () {
       <AnimatePresence>
         {isModalOpen && <Products onClose={closeModal} />}
       </AnimatePresence>
+      <FloatingButtons />
     </StyledAppLayout>
   )
 }

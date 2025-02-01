@@ -18,6 +18,7 @@ const StyledHeader = styled.header`
   gap: 0.1rem;
   align-items: center;
   justify-content: space-between;
+  position: relative;  /* Sabitlenmemesi için eklendi */
 `
 
 const NavLinks = styled.div`

@@ -1,0 +1,42 @@
+{
+  "products": {
+    "Elektronikler": [
+      {
+        "name": "Smartphone",
+        "url": "https://pbs.twimg.com/media/Gislx2XW8AAkqVT?format=jpg"
+      },
+      {
+        "name": "Laptop",
+        "url": "https://pbs.twimg.com/media/GitHnb6WIAAFoEV?format=png"
+      }
+    ],
+    "Kıyafetler": [
+      {
+        "name": "T-shirt",
+        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
+      },
+      {
+        "name": "Jeans",
+        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
+      }
+    ],
+    "Ev Aletleri": [
+      {
+        "name": "Vacuum Cleaner",
+        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
+      },
+      {
+        "name": "Blender",
+        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
+      },
+      {
+        "name": "Vacuum Cleaner2",
+        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
+      },
+      {
+        "name": "Blender2",
+        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
+      }
+    ]
+  }
+}

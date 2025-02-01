@@ -1,5 +1,6 @@
 import Heading from '../ui/Heading';
 import Row from '../ui/Row';
+import Logo from '../ui/Logo';
 
 function Information() {
   return (
@@ -22,6 +23,7 @@ function Information() {
           Aksoy Park ve Kent Ekipmanları olarak, sektördeki yenilikleri takip ederek, en güncel ve etkili çözümleri sunmaktayız. Peyzaj ve oyun grubu tadilat ihtiyaçlarınız için profesyonel hizmetler sunuyoruz.
         </p>
       </Row>
+      <Logo size="22rem"></Logo>
     </>
   );
 }

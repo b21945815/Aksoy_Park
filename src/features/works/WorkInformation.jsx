@@ -1,0 +1,88 @@
+import styled from 'styled-components'
+import { useState } from 'react'
+
+const WorkInfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+`
+
+const StyledImage = styled.img`
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;  
+  border: 5px solid var(--color-grey-300); 
+`
+
+const Title = styled.h2`
+  font-size: 16px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  width: 100%;
+  text-align: center;
+
+  ${WorkInfoWrapper}:hover & {
+    opacity: 1;
+  }
+`
+
+const FullscreenImageWrapper = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+`
+
+const FullscreenImage = styled.img`
+  max-width: 90%;
+  max-height: 90%;
+`
+
+export default function WorkInformation ({ name, link }) {
+  const [fullscreen, setFullscreen] = useState(false)
+
+  const handleImageClick = () => {
+    setFullscreen(true)
+  }
+
+  const closeFullscreen = () => {
+    setFullscreen(false)
+  }
+  return (
+    <>
+      <WorkInfoWrapper onClick={handleImageClick}>
+        <StyledImage src={link} alt={name} />
+        <Title>{name}</Title>
+      </WorkInfoWrapper>
+      {fullscreen && (
+        <FullscreenImageWrapper onClick={closeFullscreen}>
+          <FullscreenImage src={link} alt={name} />
+        </FullscreenImageWrapper>
+      )}
+    </>
+  )
+}

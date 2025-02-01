@@ -1,15 +1,9 @@
-import Heading from '../ui/Heading'
-import Row from '../ui/Row'
+import WorksList from '../features/works/WorksList'
 
 function Works () {
   return (
-    <>
-      <Heading as='h1'>Admin Page</Heading>
-
-      <Row>
-        <Heading as='h3'>Add your data</Heading>
-      </Row>
-    </>
+    <WorksList>
+    </WorksList>
   )
 }
 

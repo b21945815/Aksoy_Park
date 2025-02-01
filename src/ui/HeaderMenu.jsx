@@ -9,21 +9,29 @@ const StyledHeaderMenu = styled.ul`
   gap: 0.4rem;
 `;
 
-function HeaderMenu() {
+function HeaderMenu({ isAuthenticated }) {
   const navigate = useNavigate();
-
+  if (isAuthenticated) {
+    return (
+      <StyledHeaderMenu>
+        <li>
+          <ButtonIcon onClick={() => navigate("/admin")}>
+            <HiOutlineUser />
+          </ButtonIcon>
+        </li>
+        <li>
+          <DarkModeToggle />
+        </li>
+        <li>
+          <Logout />
+        </li>
+      </StyledHeaderMenu>
+    );
+  }
   return (
     <StyledHeaderMenu>
       <li>
-        <ButtonIcon onClick={() => navigate("/account")}>
-          <HiOutlineUser />
-        </ButtonIcon>
-      </li>
-      <li>
         <DarkModeToggle />
-      </li>
-      <li>
-        <Logout />
       </li>
     </StyledHeaderMenu>
   );

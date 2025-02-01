@@ -8,12 +8,12 @@ const ButtonIcon = styled.button`
   transition: all 0.2s;
 
   &:hover {
-    background-color: var(--color-grey-100);
+    background-color: var(--color-grey-300);
   }
 
   & svg {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 3rem;
+    height: 3rem;
     color: var(--color-brand-600);
   }
 `;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useUser } from "./useUser";
 
 const StyledUserImage = styled.div`
   display: flex;
@@ -7,7 +6,7 @@ const StyledUserImage = styled.div`
   align-items: center;
   font-weight: 500;
   font-size: 1.4rem;
-  color: var(--color-grey-600);
+  color: var(--color-grey-900);
 `;
 
 const Image = styled.img`
@@ -18,20 +17,17 @@ const Image = styled.img`
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
-  outline: 2px solid var(--color-grey-100);
+  outline: 2px solid var(--color-grey-700);
 `;
 
 function UserImage() {
-  const { user } = useUser();
-  const { fullName, userImage } = user.user_metadata;
 
   return (
     <StyledUserImage>
       <Image
-        src={userImage || "default-user.jpg"}
-        alt={`Image of ${fullName}`}
+        src={"default-user.jpg"}
       />
-      <span>{fullName}</span>
+      <span>{"Admin"}</span>
     </StyledUserImage>
   );
 }

@@ -14,9 +14,6 @@ import Modal from "../../ui/Modal";
 import Menus from "../../ui/Menus";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 
-import { formatCurrency } from "../../utils/helpers";
-import { formatDistanceFromNow } from "../../utils/helpers";
-import { useCheckout } from "../check-in-out/useCheckout";
 import { useDeleteBooking } from "./useDeleteBooking";
 
 const Cabin = styled.div`
@@ -61,7 +58,6 @@ function BookingRow({
   },
 }) {
   const navigate = useNavigate();
-  const { checkout, isCheckingOut } = useCheckout();
   const { deleteBooking, isDeleting } = useDeleteBooking();
 
   const statusToTagName = {
@@ -113,16 +109,6 @@ function BookingRow({
                 onClick={() => navigate(`/checkin/${bookingId}`)}
               >
                 Check in
-              </Menus.Button>
-            )}
-
-            {status === "checked-in" && (
-              <Menus.Button
-                icon={<HiArrowUpOnSquare />}
-                onClick={() => checkout(bookingId)}
-                disabled={isCheckingOut}
-              >
-                Check out
               </Menus.Button>
             )}
 

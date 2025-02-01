@@ -7,11 +7,9 @@ import ErrorFallback from "./ui/ErrorFallback";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     {
-      //beklenmeyen hata olursa diye. tüm hataları değil. render sırasındaki hatalar
-      //async fonksiyonlarda olan hataları almıyor olabilir mesela
     }
     <ErrorBoundary
-      FallbackComponent={ErrorFallback}
+      FallbackComponent={ErrorFallback} 
       onReset={() => window.location.replace("/")}
     >
       <App />

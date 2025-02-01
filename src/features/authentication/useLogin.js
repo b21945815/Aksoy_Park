@@ -12,7 +12,7 @@ export function useLogin() {
     onSuccess: (user) => {
       //manuel olarak ekleme
       queryClient.setQueryData(["user"], user.user);
-      navigate("/dashboard", { replace: true });
+      navigate("/admin", { replace: true });
     },
     onError: (err) => {
       console.log("ERROR", err);

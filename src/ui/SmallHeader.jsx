@@ -95,7 +95,7 @@ function SmallHeader ({ openModal }) {
           </NavLink>
         </NavLinks>
       </SmallHeaderContent>
-      <ContactInfo phone='+1 234 567 890' email='info@example.com' />
+      <ContactInfo phone='+90 536 636 28 97' email='info@example.com' />
       <NavLinks>
         <HeaderMenu isAuthenticated={false} />
       </NavLinks>

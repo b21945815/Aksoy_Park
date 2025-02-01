@@ -10,12 +10,11 @@ import Login from './pages/Login'
 import PageNotFound from './pages/PageNotFound'
 import AppLayout from './ui/AppLayout'
 import Works from './pages/Works'
-import Products from './pages/Products'
 import { DarkModeProvider } from './context/DarkModeContext'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 10000
+      staleTime: 100000
     }
   }
 })

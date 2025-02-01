@@ -21,7 +21,7 @@ const WhatsappButtonStyled = styled.a`
 function WhatsappButton() {
   return (
     <WhatsappButtonStyled
-      href="https://wa.me/5052767071"
+      href="https://wa.me/905366362897"
       target="_blank"
       rel="noopener noreferrer"
     >

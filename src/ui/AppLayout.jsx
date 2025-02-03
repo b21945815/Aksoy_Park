@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
+import MobileFooter from './MobileFooter'
 import SmallHeader from './SmallHeader'
 import React, { useState, useEffect } from 'react'
 import Products from '../pages/Products'
@@ -11,15 +12,12 @@ const StyledAppLayout = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
 `
 
 const Main = styled.main`
   background-color: var(--color-grey-0);
   padding: 4rem 4.8rem 6.4rem;
   flex-grow: 1;
-  overflow-y: auto; 
   
   @media (max-width: 768px) {
     padding: 2rem 1.6rem 3rem; 
@@ -35,6 +33,21 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 1rem; 
+  }
+`
+
+const FooterContainer = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    bottom: 0;
+    display: block;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--color-grey-000);
+    padding: 1rem 1.6rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
   }
 `
 
@@ -60,7 +73,6 @@ function AppLayout () {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
-
   return (
     <StyledAppLayout>
       {showSmallHeader && <SmallHeader openModal={openModal}/>}
@@ -75,6 +87,10 @@ function AppLayout () {
         {isModalOpen && <Products onClose={closeModal} />}
       </AnimatePresence>
       <FloatingButtons />
+
+      <FooterContainer>
+        <MobileFooter />
+      </FooterContainer>
     </StyledAppLayout>
   )
 }

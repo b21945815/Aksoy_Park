@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { useState } from 'react'
+import FullscreenImagePage from '../ui/FullscreenImagePage'
 import Button from '../ui/Button'
 import RetractableWindow from '../ui/RetractableWindow'
 import { useWorks } from '../features/works/useWorks'
-//import FullscreenImagePage from '../ui/FullscreenImagePage'
 import WorkRow from '../features/works/WorkRow'
 import Table from '../ui/Table'
 import Menus from '../ui/Menus'
@@ -95,13 +95,13 @@ function Admin () {
         </Menus>
       )}
 
-      {/* {isModalOpen && (
+      {isModalOpen && (
         <FullscreenImagePage
           closeFullscreen={closeModal}
           link={selectedImage}
           name={'Full Screen'}
         ></FullscreenImagePage>
-      )} */}
+      )}
     </>
   )
 }

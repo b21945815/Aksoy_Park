@@ -153,10 +153,10 @@ export default function ProductsList() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   useEffect(() => {
-    if (window.innerWidth >= 769) {
+    if (!isLoading && window.innerWidth >= 769) {
       setSelectedCategory(products.length > 0 ? products[0].category : null);
     }
-  }, [products]);
+  }, [products, isLoading]);
 
   if (isLoading) return <Spinner />;
   if (error) return <div>Resimleri yüklerken hata oluştu</div>;

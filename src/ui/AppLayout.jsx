@@ -81,9 +81,8 @@ function AppLayout () {
         setShowSmallHeader(false)
       }
     }
-
     window.addEventListener('scroll', handleScroll)
-
+    
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
@@ -94,9 +93,8 @@ function AppLayout () {
         <MobileHeader/>
       ) : showSmallHeader ? (
         <SmallHeader openModal={openModal} />
-      ) : (
-        <Header openModal={openModal} />
-      )}
+      ) : <></>}
+      <Header openModal={openModal} />
       <Main>
         <Container>
           <Outlet />

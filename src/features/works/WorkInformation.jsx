@@ -23,6 +23,10 @@ const StyledImage = styled.img`
   object-fit: cover;
   border-radius: 10px;
   border: 5px solid var(--color-grey-300);
+
+  @media (max-width: 768px) {
+    max-height: 150px; /* Mobilde daha küçük yükseklik */
+  }
 `
 
 const Title = styled.h2`
@@ -42,6 +46,11 @@ const Title = styled.h2`
 
   ${WorkInfoWrapper}:hover & {
     opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px; 
+    padding: 3px;
   }
 `
 
@@ -66,7 +75,7 @@ export default function WorkInformation ({ name, link }) {
           closeFullscreen={closeFullscreen}
           link={link}
           name={name}
-        ></FullscreenImagePage>
+        />
       )}
     </>
   )

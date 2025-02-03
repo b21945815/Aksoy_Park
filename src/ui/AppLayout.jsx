@@ -6,8 +6,8 @@ import SmallHeader from './SmallHeader'
 import React, { useState, useEffect } from 'react'
 import Products from '../pages/Products'
 import styled from 'styled-components'
-import { AnimatePresence } from 'framer-motion';
-import FloatingButtons from './FloatingButtons';
+import { AnimatePresence } from 'framer-motion'
+import FloatingButtons from './FloatingButtons'
 
 const StyledAppLayout = styled.div`
   display: flex;
@@ -19,9 +19,9 @@ const Main = styled.main`
   background-color: var(--color-grey-0);
   padding: 4rem 4.8rem 6.4rem;
   flex-grow: 1;
-  
+
   @media (max-width: 768px) {
-    padding: 2rem 1.6rem 3rem; 
+    padding: 2rem 1.6rem 3rem;
   }
 `
 
@@ -33,7 +33,7 @@ const Container = styled.div`
   gap: 3.2rem;
 
   @media (max-width: 768px) {
-    padding: 0 1rem; 
+    padding: 0 1rem;
   }
 `
 
@@ -55,18 +55,18 @@ const FooterContainer = styled.div`
 function AppLayout () {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [showSmallHeader, setShowSmallHeader] = useState(false)
-  const [isMobile, setIsMobile] = useState(false) 
+  const [isMobile, setIsMobile] = useState(false)
 
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768) 
+      setIsMobile(window.innerWidth <= 768)
     }
 
-    handleResize() 
-    window.addEventListener('resize', handleResize) 
+    handleResize()
+    window.addEventListener('resize', handleResize)
 
     return () => {
       window.removeEventListener('resize', handleResize)
@@ -75,14 +75,14 @@ function AppLayout () {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {  
+      if (window.scrollY > 100) {
         setShowSmallHeader(true)
       } else {
         setShowSmallHeader(false)
       }
     }
     window.addEventListener('scroll', handleScroll)
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
@@ -90,11 +90,13 @@ function AppLayout () {
   return (
     <StyledAppLayout>
       {isMobile ? (
-        <MobileHeader/>
+        <MobileHeader />
       ) : showSmallHeader ? (
         <SmallHeader openModal={openModal} />
-      ) : <></>}
-      <Header openModal={openModal} />
+      ) : (
+        <></>
+      )}
+      {isMobile ? <></> : <Header openModal={openModal} />}
       <Main>
         <Container>
           <Outlet />

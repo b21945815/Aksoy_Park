@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import ProductsList from '../features/products/ProductsList'
+import ProductsList from '../features/products/ProductsList' 
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;

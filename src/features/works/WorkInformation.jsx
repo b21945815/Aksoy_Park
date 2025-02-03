@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { useState } from 'react'
+import FullscreenImagePage from '../../ui/FullscreenImagePage'
 
 const WorkInfoWrapper = styled.div`
   display: flex;
@@ -20,8 +21,8 @@ const StyledImage = styled.img`
   width: 300px;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;  
-  border: 5px solid var(--color-grey-300); 
+  border-radius: 10px;
+  border: 5px solid var(--color-grey-300);
 `
 
 const Title = styled.h2`
@@ -44,24 +45,6 @@ const Title = styled.h2`
   }
 `
 
-const FullscreenImageWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-`
-
-const FullscreenImage = styled.img`
-  max-width: 90%;
-  max-height: 90%;
-`
-
 export default function WorkInformation ({ name, link }) {
   const [fullscreen, setFullscreen] = useState(false)
 
@@ -79,9 +62,11 @@ export default function WorkInformation ({ name, link }) {
         <Title>{name}</Title>
       </WorkInfoWrapper>
       {fullscreen && (
-        <FullscreenImageWrapper onClick={closeFullscreen}>
-          <FullscreenImage src={link} alt={name} />
-        </FullscreenImageWrapper>
+        <FullscreenImagePage
+          closeFullscreen={closeFullscreen}
+          link={link}
+          name={name}
+        ></FullscreenImagePage>
       )}
     </>
   )

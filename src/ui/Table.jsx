@@ -86,7 +86,7 @@ function Row({ children }) {
     </StyledRow>
   );
 }
-//bu şekilde yapmak önemli
+
 function Body({ data, render }) {
   if (!data.length) return <Empty>No data to show at the moment</Empty>;
 

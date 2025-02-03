@@ -10,7 +10,6 @@ export function useLogin() {
   const { mutate: login, isLoading } = useMutation({
     mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: (user) => {
-      //manuel olarak ekleme
       queryClient.setQueryData(["user"], user.user);
       navigate("/admin", { replace: true });
     },

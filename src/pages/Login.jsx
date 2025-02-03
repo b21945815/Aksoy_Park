@@ -22,7 +22,7 @@ function Login() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/admin');
+      navigate('/admin',  { replace: true });
     }
   }, [isAuthenticated, navigate]);
    

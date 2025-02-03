@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
 import MobileFooter from './MobileFooter'
+import MobileHeader from './MobileHeader'
 import SmallHeader from './SmallHeader'
 import React, { useState, useEffect } from 'react'
 import Products from '../pages/Products'
@@ -54,9 +55,23 @@ const FooterContainer = styled.div`
 function AppLayout () {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [showSmallHeader, setShowSmallHeader] = useState(false)
+  const [isMobile, setIsMobile] = useState(false) 
 
   const openModal = () => setIsModalOpen(true)
   const closeModal = () => setIsModalOpen(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768) 
+    }
+
+    handleResize() 
+    window.addEventListener('resize', handleResize) 
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,8 +90,13 @@ function AppLayout () {
   }, [])
   return (
     <StyledAppLayout>
-      {showSmallHeader && <SmallHeader openModal={openModal}/>}
-      <Header openModal={openModal} />
+      {isMobile ? (
+        <MobileHeader/>
+      ) : showSmallHeader ? (
+        <SmallHeader openModal={openModal} />
+      ) : (
+        <Header openModal={openModal} />
+      )}
       <Main>
         <Container>
           <Outlet />

@@ -21,6 +21,7 @@ const ContactInfo = styled.div`
   display: flex;
   flex-direction: column;
   text-align: right;
+  color: #000;
 `
 
 const MobileFooter = () => {

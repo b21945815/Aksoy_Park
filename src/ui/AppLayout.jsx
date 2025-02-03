@@ -8,14 +8,22 @@ import { AnimatePresence } from 'framer-motion';
 import FloatingButtons from './FloatingButtons';
 
 const StyledAppLayout = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 `
 
 const Main = styled.main`
   background-color: var(--color-grey-0);
   padding: 4rem 4.8rem 6.4rem;
+  flex-grow: 1;
+  overflow-y: auto; 
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1.6rem 3rem; 
+  }
 `
 
 const Container = styled.div`
@@ -24,6 +32,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem; 
+  }
 `
 
 function AppLayout () {

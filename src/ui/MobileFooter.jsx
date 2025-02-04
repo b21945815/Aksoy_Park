@@ -24,6 +24,13 @@ const ContactInfo = styled.div`
   color: #000;
 `
 
+const WhoMade = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  color: #111;
+`
+
 const MobileFooter = () => {
   return (
     <FooterWrapper>
@@ -33,6 +40,7 @@ const MobileFooter = () => {
       <ContactInfo>
         <div>+90 536 636 28 97</div>
         <div>info@example.com</div>
+        <div style={{ fontSize: '1.2rem', color: '#888' }}>Fatih AY tarafından yapılmıştır</div>
       </ContactInfo>
     </FooterWrapper>
   )

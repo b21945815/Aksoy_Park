@@ -2,76 +2,28 @@
   "images": {
     "image": [
       {
-        "name": "Meydan Parkı",
-        "url": "https://pbs.twimg.com/media/Gislx2XW8AAkqVT?format=jpg"
+        "name": "Mini Bahçe",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/1.png"
       },
       {
-        "name": "Trabzon Parkı",
-        "url": "https://pbs.twimg.com/media/GitHnb6WIAAFoEV?format=png"
+        "name": "Oyun Parkı",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/2.png"
       },
       {
-        "name": "Trabzon Ağacı1",
-        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
+        "name": "Tırmanma Halatı",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/3.png"
       },
       {
-        "name": "Meydan Parkı1",
-        "url": "https://pbs.twimg.com/media/Gislx2XW8AAkqVT?format=jpg"
+        "name": "Top Havuzu",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/4.png"
       },
       {
-        "name": "Trabzon Parkı2",
-        "url": "https://pbs.twimg.com/media/GitHnb6WIAAFoEV?format=png"
+        "name": "Büyük Bahçe",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/5.png"
       },
       {
-        "name": "Trabzon Ağacı2",
-        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
-      },
-      {
-        "name": "Meydan Parkı3",
-        "url": "https://pbs.twimg.com/media/Gislx2XW8AAkqVT?format=jpg"
-      },
-      {
-        "name": "Trabzon Parkı3",
-        "url": "https://pbs.twimg.com/media/GitHnb6WIAAFoEV?format=png"
-      },
-      {
-        "name": "Trabzon Ağacı4",
-        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
-      },
-      {
-        "name": "Meydan Parkı4",
-        "url": "https://pbs.twimg.com/media/Gislx2XW8AAkqVT?format=jpg"
-      },
-      {
-        "name": "Trabzon Parkı5",
-        "url": "https://pbs.twimg.com/media/GitHnb6WIAAFoEV?format=png"
-      },
-      {
-        "name": "Trabzon Ağacı5",
-        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
-      },
-      {
-        "name": "Trabzon Parkı6",
-        "url": "https://pbs.twimg.com/media/GitHnb6WIAAFoEV?format=png"
-      },
-      {
-        "name": "Trabzon Ağacı6",
-        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
-      },
-      {
-        "name": "Trabzon Parkı7",
-        "url": "https://pbs.twimg.com/media/GitHnb6WIAAFoEV?format=png"
-      },
-      {
-        "name": "Trabzon Ağacı7",
-        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
-      },
-      {
-        "name": "Trabzon Parkı8",
-        "url": "https://pbs.twimg.com/media/GitHnb6WIAAFoEV?format=png"
-      },
-      {
-        "name": "Trabzon Ağacı8",
-        "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
+        "name": "Taş Toprak",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/6.png"
       }
     ]
   }

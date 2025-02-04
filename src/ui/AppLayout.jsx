@@ -13,6 +13,7 @@ const StyledAppLayout = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  position: relative;
 `
 
 const Main = styled.main`
@@ -52,6 +53,19 @@ const FooterContainer = styled.div`
   }
 `
 
+const CreditText = styled.div`
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-grey-500);
+  z-index: 1000;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`
+
 function AppLayout () {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [showSmallHeader, setShowSmallHeader] = useState(false)
@@ -87,6 +101,7 @@ function AppLayout () {
       window.removeEventListener('scroll', handleScroll)
     }
   }, [])
+
   return (
     <StyledAppLayout>
       {isMobile ? (
@@ -111,6 +126,8 @@ function AppLayout () {
       <FooterContainer>
         <MobileFooter />
       </FooterContainer>
+
+      {!isMobile && <CreditText>Fatih AY tarafından yapılmıştır</CreditText>}
     </StyledAppLayout>
   )
 }

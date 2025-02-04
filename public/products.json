@@ -1,9 +1,9 @@
 {
   "products": {
-    "Elektronikler": [
+    "Kreş": [
       {
-        "name": "Smartphone",
-        "url": "https://pbs.twimg.com/media/Gislx2XW8AAkqVT?format=jpg"
+        "name": "Kreş-01",
+        "url": "https://raw.githubusercontent.com/b21945815/Aksoy_Park/refs/heads/main/public/logo-dark.png"
       },
       {
         "name": "Laptop",
@@ -16,7 +16,7 @@
         "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
       },
       {
-        "name": "Jeans",
+        "name": "Jeans",  
         "url": "https://pbs.twimg.com/media/GitHncAWAAAWGZ0?format=png"
       }
     ],

@@ -1,11 +1,20 @@
 import { useExamples } from './useExamples'
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import Spinner from '../../ui/Spinner'
-import ModernSidebar from '../../ui/ModernSidebar'
 import styled from 'styled-components'
 import ExamplesInformation from './ExamplesInformation'
+import ModernSidebar from '../../ui/ModernSidebar'
+
+const Container = styled.div`
+  display: flex;
+`
+
+const SidebarWrapper = styled.div`
+  width: 220px;
+`
 
 const ExamplesListWrapper = styled.div`
+  flex: 1;
   padding: 20px;
   overflow-x: hidden;
 `
@@ -20,37 +29,47 @@ const GridWrapper = styled.div`
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
   }
-
 `
 
 const ExamplesList = () => {
   const { examples, isLoading, error } = useExamples()
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null)
 
   useEffect(() => {
-    if (!isLoading && window.innerWidth >= 769) {
-      setSelectedCategory(examples.length > 0 ? examples[0].category : null);
+    if (!isLoading && examples.length > 0) {
+      setSelectedCategory(examples[0].category)
     }
-  }, [examples, isLoading]);
+  }, [examples, isLoading])
 
   if (isLoading) return <Spinner />
-
-  if (error) {
-    return <div>Resimleri yüklerken hata oluştu</div>
-  }
+  if (error) return <div>Resimleri yüklerken hata oluştu</div>
 
   const filteredProducts = selectedCategory
     ? examples.find(cat => cat.category === selectedCategory)?.items || []
-    : [];
+    : []
 
   return (
-    <ExamplesListWrapper>
-      <GridWrapper>
-        {filteredProducts.map((example, index) => (
-          <ExamplesInformation key={index} name={example.name} link={example.url} />
-        ))}
-      </GridWrapper>
-    </ExamplesListWrapper>
+    <Container>
+      <SidebarWrapper>
+        <ModernSidebar
+          categories={examples.map(cat => cat.category)}
+          selectedCategory={selectedCategory}
+          onSelectCategory={setSelectedCategory}
+        />
+      </SidebarWrapper>
+
+      <ExamplesListWrapper>
+        <GridWrapper>
+          {filteredProducts.map((example, index) => (
+            <ExamplesInformation
+              key={index}
+              name={example.name}
+              link={example.url}
+            />
+          ))}
+        </GridWrapper>
+      </ExamplesListWrapper>
+    </Container>
   )
 }
 

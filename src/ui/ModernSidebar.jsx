@@ -1,43 +1,27 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const SidebarWrapper = styled.div`
-  width: 200px;
-  background-color: #2c2c2c;
-  padding: 20px;
-  height: 100vh;
+  width: 220px;
+  background-color: var(--color-grey-500);
+  position: fixed;
+  left: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  border-right: 2px solid #1f1f1f;
 `;
 
 const CategoryButton = styled.button`
-  background-color: #3a3a3a;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  text-align: left;
   width: 100%;
-  cursor: pointer;
+  padding: 15px;
+  border: none;
+  background: var(--color-grey-400);
+  color: white;
+  text-align: left;
   font-size: 16px;
-  font-weight: bold;
+  cursor: pointer;
   transition: background 0.3s ease-in-out;
-  position: relative;
-  overflow: hidden;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    transition: width 0.3s ease-in-out;
-  }
-
-  &:hover::after {
-    width: 100%;
+  
+  &:hover {
+    background: linear-gradient(to right, var(--color-grey-500), var(--color-grey-400));
   }
 `;
 
@@ -47,8 +31,8 @@ const ModernSidebar = ({ categories, selectedCategory, onSelectCategory }) => {
       {categories.map((category) => (
         <CategoryButton
           key={category}
+          active={selectedCategory === category}
           onClick={() => onSelectCategory(category)}
-          style={{ backgroundColor: selectedCategory === category ? '#444' : '#3a3a3a' }}
         >
           {category}
         </CategoryButton>

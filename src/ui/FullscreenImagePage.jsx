@@ -18,7 +18,7 @@ const FullscreenImage = styled.img`
   max-width: 90%;
   max-height: 90%;
   
-  @media (max-width: 1400px) and (min-width: 768px) {
+  @media (max-width: 1500px) and (min-width: 768px) {
     max-width: 75%; 
     max-height: 80%;
   }

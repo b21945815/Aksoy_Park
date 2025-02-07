@@ -7,7 +7,8 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
+  left:0;
   width: 100%;
   margin: 0; 
 `;
@@ -30,28 +31,25 @@ const Content = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 800px; /* Resim için daha geniş bir alan */
   margin-right: 20px;
 
   @media (min-width: 768px) {
-    flex-direction: row; /* Resim ve thumbnail'lar yan yana */
+    flex-direction: row; 
     align-items: flex-start;
     margin-right: 40px;
-    margin-left: 0; /* Resmi sola yasla */
+    margin-left: 0; 
   }
 `;
 
 const MainImage = styled.img`
   max-width: 100%;
   height: auto;
-  max-height: 700px; /* Resim daha büyük */
-  margin-right: 20px; /* Thumbnail'lar ile arasında boşluk */
+  max-height: 400px;
+  margin-right: 20px;
 
   @media (min-width: 768px) {
-    max-width: 80%; /* Resim daha geniş */
-    margin-left: 20px; /* Sola biraz boşluk */
+    max-width: 80%;
+    margin-left: 20px; 
   }
 `;
 
@@ -60,20 +58,20 @@ const ThumbnailsContainer = styled.div`
   overflow-x: auto;
   margin-top: 10px;
   width: 100%;
+  max-height: 400px; 
   padding-top: 10px; 
 
   @media (min-width: 768px) {
     flex-direction: column; 
-    margin-top: 0; /* Thumbnail'lar ana resmin yanında */
+    margin-top: 0; 
     overflow-y: auto;
-    max-height: 700px; /* Ana resimle aynı yükseklik */
-    width: 100px; /* Thumbnail'lar için sabit genişlik */
+    width: 100px; 
   }
 `;
 
 const Thumbnail = styled.img`
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   margin-right: 10px;
   cursor: pointer;
@@ -95,8 +93,8 @@ const Thumbnail = styled.img`
 const Text = styled.p`
   font-size: 1.2rem;
   margin-top: 10px;
-  text-align: center;
-  max-width: 500px; 
+  text-align: left;
+  max-width: 100%; 
 
   @media (min-width: 768px) {
     text-align: left;
@@ -114,7 +112,6 @@ function ChildrenParkProduct() {
   const categoryData = products?.find(product => product.category === categoryName);
   const itemData = categoryData?.items.find(item => item.name === itemName);
   
-  // Fallback to the first URL if there's no selected image
   const mainImage = selectedImage || itemData?.url;
 
   const handleThumbnailClick = (url) => {
@@ -129,7 +126,6 @@ function ChildrenParkProduct() {
       {itemData ? (
         <Content>
           <ImageContainer>
-            <MainImage src={mainImage} alt={itemData.name} />
             <ThumbnailsContainer>
               {itemData.subUrls?.map((url, index) => (
                 <Thumbnail
@@ -141,6 +137,7 @@ function ChildrenParkProduct() {
                 />
               ))}
             </ThumbnailsContainer>
+            <MainImage src={mainImage} alt={itemData.name} />
           </ImageContainer>
           <Text>{itemData.name}</Text>
         </Content>

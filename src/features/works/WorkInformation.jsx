@@ -22,10 +22,10 @@ const StyledImage = styled.img`
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  border: 5px solid var(--color-grey-300);
+  border: 5px solid var(--color-grey-300); 
 
   @media (max-width: 768px) {
-    max-height: 200px; /* Mobilde daha küçük yükseklik */
+    max-height: 200px; 
   }
 `
 

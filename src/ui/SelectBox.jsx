@@ -5,8 +5,6 @@ const SelectBoxWrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 20px; 
-  margin-bottom: 20px; 
 `
 
 const StyledSelect = styled.select`

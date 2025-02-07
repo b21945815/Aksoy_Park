@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useState } from 'react'
 import FullscreenImagePage from '../../ui/FullscreenImagePage'
 
-const ExamplesInfoWrapper = styled.div`
+const ExampleInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +22,7 @@ const StyledImage = styled.img`
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  border: 5px solid var(--color-grey-300); 
+  border: 5px solid var(--color-grey-300);
 
   @media (max-width: 768px) {
     max-height: 200px; /* Mobilde daha küçük yükseklik */
@@ -44,7 +44,7 @@ const Title = styled.h2`
   width: 100%;
   text-align: center;
 
-  ${ExamplesInfoWrapper}:hover & {
+  ${ExampleInfoWrapper}:hover & {
     opacity: 1;
   }
 
@@ -54,7 +54,7 @@ const Title = styled.h2`
   }
 `
 
-export default function ExamplesInformation ({ name, link }) {
+export default function ExampleInformation ({ name, link }) {
   const [fullscreen, setFullscreen] = useState(false)
 
   const handleImageClick = () => {
@@ -66,10 +66,10 @@ export default function ExamplesInformation ({ name, link }) {
   }
   return (
     <>
-      <ExamplesInfoWrapper onClick={handleImageClick}>
+      <ExampleInfoWrapper onClick={handleImageClick}>
         <StyledImage src={link} alt={name} />
         <Title>{name}</Title>
-      </ExamplesInfoWrapper>
+      </ExampleInfoWrapper>
       {fullscreen && (
         <FullscreenImagePage
           closeFullscreen={closeFullscreen}

@@ -21,7 +21,7 @@ const Main = styled.main`
   padding: 4rem 4.8rem 6.4rem;
   flex-grow: 1;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     padding: 2rem 1.6rem 3rem;
   }
 `
@@ -32,7 +32,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 3.2rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     padding: 0 1rem;
   }
 `
@@ -40,7 +40,7 @@ const Container = styled.div`
 const FooterContainer = styled.div`
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     bottom: 0;
     display: block;
     width: 100%;
@@ -60,7 +60,7 @@ const CreditText = styled.div`
   color: var(--color-grey-500);
   z-index: 1000;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     display: none;
   }
 `
@@ -75,7 +75,7 @@ function AppLayout () {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768)
+      setIsMobile(window.innerWidth <= 800)
     }
 
     handleResize()

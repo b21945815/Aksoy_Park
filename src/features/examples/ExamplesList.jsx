@@ -14,11 +14,11 @@ const GridWrapper = styled.div`
   gap: 20px;
   margin: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
     gap: 10px;
   }
-
+ 
 `
 
 const ExamplesList = () => {

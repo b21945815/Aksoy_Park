@@ -18,14 +18,15 @@ const ExampleInfoWrapper = styled.div`
 `
 
 const StyledImage = styled.img`
-  width: 300px;
-  height: 200px;
+  width: 350px;
+  height: 250px;
   object-fit: cover;
   border-radius: 10px;
   border: 5px solid var(--color-grey-300);
 
-  @media (max-width: 768px) {
-    max-height: 200px; /* Mobilde daha küçük yükseklik */
+  @media (max-width: 800px) {
+    max-height: 200px; 
+    max-width: 300px; 
   }
 `
 
@@ -48,7 +49,7 @@ const Title = styled.h2`
     opacity: 1;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     font-size: 14px; 
     padding: 3px;
   }

@@ -8,7 +8,7 @@ const StyledUserImage = styled.div`
   font-size: 1.2rem;
   color: var(--color-grey-900);
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     gap: 0.8rem;
     font-size: 1rem;
   }
@@ -23,7 +23,7 @@ const Image = styled.img`
   border-radius: 50%;
   outline: 2px solid var(--color-grey-700);
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     width: 2.8rem;
   }
 `;

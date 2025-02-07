@@ -21,7 +21,7 @@ const Content = styled.div`
   justify-content: flex-start; 
   padding: 10px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
@@ -33,7 +33,7 @@ const ImageContainer = styled.div`
   flex-direction: column;
   margin-right: 20px;
 
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
     flex-direction: row; 
     align-items: flex-start;
     margin-right: 40px;
@@ -47,8 +47,8 @@ const MainImage = styled.img`
   max-height: 400px;
   margin-right: 20px;
 
-  @media (min-width: 768px) {
-    max-width: 80%;
+  @media (min-width: 800px) {
+    max-width: 70%;
     margin-left: 20px; 
   }
 `;
@@ -61,7 +61,7 @@ const ThumbnailsContainer = styled.div`
   max-height: 400px; 
   padding-top: 10px; 
 
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
     flex-direction: column; 
     margin-top: 0; 
     overflow-y: auto;
@@ -70,8 +70,8 @@ const ThumbnailsContainer = styled.div`
 `;
 
 const Thumbnail = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   margin-right: 10px;
   cursor: pointer;
@@ -82,7 +82,7 @@ const Thumbnail = styled.img`
     opacity: 0.7;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
     width: 60px;
     height: 60px;
     margin-right: 0;
@@ -96,7 +96,7 @@ const Text = styled.p`
   text-align: left;
   max-width: 100%; 
 
-  @media (min-width: 768px) {
+  @media (min-width: 800px) {
     text-align: left;
     margin-left: 40px;
     margin-top: 0;

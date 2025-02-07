@@ -24,7 +24,7 @@ const StyledImage = styled.img`
   border-radius: 10px;
   border: 5px solid var(--color-grey-300); 
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     max-height: 200px; 
   }
 `
@@ -48,7 +48,7 @@ const Title = styled.h2`
     opacity: 1;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     font-size: 14px; 
     padding: 3px;
   }

@@ -18,7 +18,7 @@ const FullscreenImage = styled.img`
   max-width: 90%;
   max-height: 90%;
   
-  @media (max-width: 1500px) and (min-width: 768px) {
+  @media (max-width: 1500px) and (min-width: 800px) {
     max-width: 75%; 
     max-height: 80%;
   }
@@ -38,7 +38,7 @@ const DetailsButton = styled.button`
     background-color: #45a049;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -48,7 +48,7 @@ const DetailsButton = styled.button`
 
 export default function FullscreenImagePage({ closeFullscreen, link, name, mainCategory, closeThisPage, onMobileClose, selectedCategory }) {
   const navigate = useNavigate()
-  const isMobile = window.innerWidth <= 768
+  const isMobile = window.innerWidth <= 800
   const goToDetails = () => {
     if (closeThisPage) closeThisPage()
     if (onMobileClose) onMobileClose()

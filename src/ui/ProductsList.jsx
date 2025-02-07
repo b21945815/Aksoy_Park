@@ -8,7 +8,7 @@ const PageContainer = styled.div`
   display: flex;
   height: 100vh;
   overflow-y: auto;
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     flex-direction: column;
   }
 `
@@ -24,7 +24,7 @@ const Sidebar = styled.div`
   top: 0;
   height: 100vh;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     position: fixed;
     width: 100%;
@@ -73,7 +73,7 @@ const ProductsGrid = styled.div`
   gap: 20px;
   margin-top: 50px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `

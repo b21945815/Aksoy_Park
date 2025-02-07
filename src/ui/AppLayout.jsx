@@ -18,12 +18,9 @@ const StyledAppLayout = styled.div`
 
 const Main = styled.main`
   background-color: var(--color-grey-0);
-  padding: 4rem 4.8rem 6.4rem;
   flex-grow: 1;
 
-  @media (max-width: 768px) {
-    padding: 2rem 1.6rem 3rem;
-  }
+
 `
 
 const Container = styled.div`
@@ -32,6 +29,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  height: 100%;
 
   @media (max-width: 768px) {
     padding: 0 1rem;

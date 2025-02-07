@@ -132,7 +132,7 @@ const BackButton = styled.button`
   }
 `
 
-export default function ProductsList ({ useProducts, mainCategory, closeThisPage }) {
+export default function ProductsList ({ useProducts, mainCategory, closeThisPage, onMobileClose }) {
   const { products, isLoading, error } = useProducts()
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [fullscreenImage, setFullscreenImage] = useState(null)
@@ -207,6 +207,7 @@ export default function ProductsList ({ useProducts, mainCategory, closeThisPage
           name={fullscreenImageName}
           mainCategory={mainCategory}
           closeThisPage={closeThisPage}
+          onMobileClose={onMobileClose}
         >
         </FullscreenImagePage>
       )}

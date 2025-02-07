@@ -124,6 +124,10 @@ function MobileHeader() {
     setIsMenuOpen((prevState) => !prevState);
   };
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const openProducts = () => {
     setIsProductsOpen(true);
   };
@@ -156,7 +160,7 @@ function MobileHeader() {
         <MenuLink to="#" onClick={openProducts}>Çocuk Parkı Ürünleri</MenuLink>
       </MenuContainer>
 
-      {isProductsOpen && <Products onClose={closeProducts} />}
+      {isProductsOpen && <Products onClose={closeProducts} onMobileClose={closeMenu}/>}
 
       <HeaderDescription>{getDescription()}</HeaderDescription>
     </Container>

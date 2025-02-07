@@ -46,11 +46,12 @@ const DetailsButton = styled.button`
   }
 `
 
-export default function FullscreenImagePage({ closeFullscreen, link, name, mainCategory, closeThisPage }) {
+export default function FullscreenImagePage({ closeFullscreen, link, name, mainCategory, closeThisPage, onMobileClose }) {
   const navigate = useNavigate()
   const isMobile = window.innerWidth <= 768
   const goToDetails = () => {
-    closeThisPage()
+    if (closeThisPage) closeThisPage()
+    if (onMobileClose) onMobileClose()
     navigate(`/${mainCategory}/${name}`)
   }
 

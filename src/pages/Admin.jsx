@@ -4,7 +4,7 @@ import FullscreenImagePage from '../ui/FullscreenImagePage'
 import Button from '../ui/Button'
 import RetractableWindow from '../ui/RetractableWindow'
 import { useWorks } from '../features/works/useWorks'
-import WorkRow from '../features/works/WorkRow'
+import AdminRow from '../ui/AdminRow'
 import Table from '../ui/Table'
 import Menus from '../ui/Menus'
 import Spinner from '../ui/Spinner'
@@ -16,7 +16,7 @@ const Container = styled.div`
 `
 
 function Admin () {
-  const { images, isLoading, error, addImage, editImage, deleteImage } =
+  const { works, isLoading, error, addImage, editImage, deleteImage } =
     useWorks()
   const [selectedImage, setSelectedImage] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -80,11 +80,11 @@ function Admin () {
             </Table.Header>
 
             <Table.Body
-              data={images}
-              render={image => (
-                <WorkRow
-                  url={image.url}
-                  name={image.name}
+              data={works}
+              render={work => (
+                <AdminRow
+                  url={work.url}
+                  name={work.name}
                   handleImageClick={handleImageClick}
                   handleEditImage={handleEditImage}
                   handleDeleteImage={handleDeleteImage}

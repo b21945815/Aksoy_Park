@@ -22,20 +22,20 @@ const GridWrapper = styled.div`
 `
 
 const WorksList = () => {
-  const { images, isLoading, error } = useWorks()
+  const { works, isLoading, error } = useWorks()
 
   if (isLoading) return <Spinner />
 
   if (error) {
     return <div>Resimleri yüklerken hata yaşandı</div>
   }
-  if (!images || images.length === 0)
+  if (!works || works.length === 0) 
     return <p>Sistemde resim bulunmamaktadır</p>
-  return (
+  return ( 
     <WorksListWrapper>
       <GridWrapper>
-        {images.map((image, index) => (
-          <WorkInformation key={index} name={image.name} link={image.url} />
+        {works.map((work, index) => (
+          <WorkInformation key={index} name={work.name} link={work.url} />
         ))}
       </GridWrapper>
     </WorksListWrapper>

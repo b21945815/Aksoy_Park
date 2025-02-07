@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
-import { useProducts } from './useProducts';
-import Spinner from '../../ui/Spinner';
-import FullscreenImagePage from '../../ui/FullscreenImagePage';
+import Spinner from './Spinner';
+import FullscreenImagePage from './FullscreenImagePage';
 
 const PageContainer = styled.div`
   display: flex;
@@ -149,11 +148,10 @@ const BackButton = styled.button`
   }
 `;
 
-export default function ProductsList() {
+export default function ProductsList({useProducts}) {
   const { products, isLoading, error } = useProducts();
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [fullscreenImage, setFullscreenImage] = useState(null);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   useEffect(() => {
     if (!isLoading && window.innerWidth >= 769) {
@@ -176,7 +174,6 @@ export default function ProductsList() {
             key={category}
             onClick={() => {
               setSelectedCategory(category);
-              setSidebarOpen(false);
             }}
           >
             {category}

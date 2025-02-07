@@ -1,4 +1,4 @@
-import { useWorks } from './useWorks'
+import { useExamples } from './useExamples'
 import Spinner from '../../ui/Spinner'
 import styled from 'styled-components'
 import ExamplesInformation from './ExamplesInformation'
@@ -22,20 +22,20 @@ const GridWrapper = styled.div`
 `
 
 const ExamplesList = () => {
-  const { images, isLoading, error } = useWorks()
+  const { examples, isLoading, error } = useExamples()
 
   if (isLoading) return <Spinner />
 
   if (error) {
     return <div>Resimleri yüklerken hata yaşandı</div>
   }
-  if (!images || images.length === 0)
+  if (!examples || examples.length === 0)
     return <p>Sistemde resim bulunmamaktadır</p>
   return (
     <ExamplesListWrapper>
       <GridWrapper>
-        {images.map((image, index) => (
-          <ExamplesInformation key={index} name={image.name} link={image.url} />
+        {examples.map((example, index) => (
+          <ExamplesInformation key={index} name={example.name} link={example.url} />
         ))}
       </GridWrapper>
     </ExamplesListWrapper>

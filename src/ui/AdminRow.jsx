@@ -1,7 +1,7 @@
-import Table from '../../ui/Table'
-import Button from '../../ui/Button'
+import Table from './Table'
+import Button from './Button'
 
-export default function ExamplesRow ({
+export default function AdminRow ({
   url,
   name,
   handleImageClick,

@@ -7,12 +7,25 @@ import ExamplesInformation from './ExamplesInformation'
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`
+
+const SelectBoxWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 `
 
 const ExamplesListWrapper = styled.div`
   flex: 1;
   padding: 20px;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 1200px;
 `
 
 const GridWrapper = styled.div`
@@ -47,11 +60,13 @@ const ExamplesList = () => {
 
   return (
     <Container>
-      <SelectBox
-        categories={categories}
-        selectedCategory={selectedCategory}
-        onChange={e => setSelectedCategory(e.target.value)}
-      />
+      <SelectBoxWrapper>
+        <SelectBox
+          categories={categories}
+          selectedCategory={selectedCategory}
+          onChange={e => setSelectedCategory(e.target.value)}
+        />
+      </SelectBoxWrapper>
       <ExamplesListWrapper>
         <GridWrapper>
           {filteredProducts.map((example, index) => (

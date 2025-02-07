@@ -3,7 +3,17 @@
     "Kreş Seri": [
       {
         "name": "Kreş Seri-01",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0084.jpg"
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0084.jpg",
+        "sub-urls": [
+          "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0084.jpg",
+          "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0002.jpg",
+          "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0007.jpg",
+          "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0004.jpg",
+          "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0008.jpg",
+          "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0005.jpg",
+          "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0011.jpg",
+          "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0003.jpg"
+        ]
       },
       {
         "name": "Kreş Seri-02",
@@ -36,7 +46,7 @@
       {
         "name": "Kreş Seri-09",
         "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0006.jpg"
-      } 
+      }
     ],
     "Elit Klasik Seri": [
       {

@@ -204,6 +204,7 @@ export default function ProductsList ({ useProducts, mainCategory, closeThisPage
         <FullscreenImagePage
           closeFullscreen={() => setFullscreenImage(null)}
           link={fullscreenImage}
+          selectedCategory={selectedCategory}
           name={fullscreenImageName}
           mainCategory={mainCategory}
           closeThisPage={closeThisPage}

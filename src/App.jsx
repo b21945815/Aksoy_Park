@@ -35,7 +35,7 @@ function App () {
               <Route path='works' element={<Works />} />
               <Route path='examples' element={<Examples />} />
               <Route path='admin' element={<Admin />} />
-              <Route path="/childrenParkProduct/:itemName" element={<ChildrenParkProduct />} />
+              <Route path="/childrenParkProduct/:categoryName/:itemName" element={<ChildrenParkProduct />} />
             </Route>
 
             <Route path='login' element={<Login />} />

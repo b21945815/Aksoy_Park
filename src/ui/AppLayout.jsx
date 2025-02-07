@@ -89,7 +89,7 @@ function AppLayout () {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 30) {
         setShowSmallHeader(true)
       } else {
         setShowSmallHeader(false)

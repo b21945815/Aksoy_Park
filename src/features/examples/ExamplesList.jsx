@@ -1,16 +1,12 @@
 import { useExamples } from './useExamples'
 import { useState, useEffect } from 'react'
 import Spinner from '../../ui/Spinner'
+import SelectBox from '../../ui/SelectBox'
 import styled from 'styled-components'
 import ExamplesInformation from './ExamplesInformation'
-import ModernSidebar from '../../ui/ModernSidebar'
 
 const Container = styled.div`
   display: flex;
-`
-
-const SidebarWrapper = styled.div`
-  width: 220px;
 `
 
 const ExamplesListWrapper = styled.div`
@@ -44,20 +40,18 @@ const ExamplesList = () => {
   if (isLoading) return <Spinner />
   if (error) return <div>Resimleri yüklerken hata oluştu</div>
 
+  const categories = examples.map(example => example.category)
   const filteredProducts = selectedCategory
     ? examples.find(cat => cat.category === selectedCategory)?.items || []
     : []
 
   return (
     <Container>
-      <SidebarWrapper>
-        <ModernSidebar
-          categories={examples.map(cat => cat.category)}
-          selectedCategory={selectedCategory}
-          onSelectCategory={setSelectedCategory}
-        />
-      </SidebarWrapper>
-
+      <SelectBox
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onChange={e => setSelectedCategory(e.target.value)}
+      />
       <ExamplesListWrapper>
         <GridWrapper>
           {filteredProducts.map((example, index) => (

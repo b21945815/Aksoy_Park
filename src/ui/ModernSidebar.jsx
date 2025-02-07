@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const SidebarWrapper = styled.div`
   width: 220px;
@@ -7,7 +7,7 @@ const SidebarWrapper = styled.div`
   left: 0;
   display: flex;
   flex-direction: column;
-`;
+`
 
 const CategoryButton = styled.button`
   width: 100%;
@@ -21,16 +21,26 @@ const CategoryButton = styled.button`
   transition: background 0.3s ease-in-out;
   outline: none;
   box-shadow: none;
-  
-  &:hover {
-    background: linear-gradient(to right, var(--color-grey-500), var(--color-grey-400));
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    box-shadow: none;
   }
-`;
+
+  &:hover {
+    background: linear-gradient(
+      to right,
+      var(--color-grey-500),
+      var(--color-grey-400)
+    );
+  }
+`
 
 const ModernSidebar = ({ categories, selectedCategory, onSelectCategory }) => {
   return (
     <SidebarWrapper>
-      {categories.map((category) => (
+      {categories.map(category => (
         <CategoryButton
           key={category}
           active={selectedCategory === category}
@@ -40,7 +50,7 @@ const ModernSidebar = ({ categories, selectedCategory, onSelectCategory }) => {
         </CategoryButton>
       ))}
     </SidebarWrapper>
-  );
-};
+  )
+}
 
-export default ModernSidebar;
+export default ModernSidebar

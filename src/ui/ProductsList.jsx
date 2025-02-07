@@ -1,7 +1,8 @@
-import styled from 'styled-components';
-import { useState, useEffect } from 'react';
-import Spinner from './Spinner';
-import FullscreenImagePage from './FullscreenImagePage';
+import styled from 'styled-components'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import Spinner from './Spinner'
+import FullscreenImagePage from './FullscreenImagePage'
 
 const PageContainer = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ const PageContainer = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   }
-`;
+`
 
 const Sidebar = styled.div`
   width: 250px;
@@ -24,7 +25,7 @@ const Sidebar = styled.div`
   height: 100vh;
 
   @media (max-width: 768px) {
-    display: ${props => (props.isOpen ? 'flex' : 'none')};
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     position: fixed;
     width: 100%;
     height: auto;
@@ -34,10 +35,10 @@ const Sidebar = styled.div`
     background: var(--color-grey-100);
     padding: 10px;
     overflow-y: auto;
-    max-height: 80vh; 
-    padding-top: 50px; 
+    max-height: 80vh;
+    padding-top: 50px;
   }
-`;
+`
 
 const CategoryButton = styled.button`
   background: #008cba;
@@ -49,16 +50,22 @@ const CategoryButton = styled.button`
   width: 100%;
   border-radius: 5px;
   transition: background 0.3s;
+  outline: none;
 
   &:hover {
     background: #005f73;
   }
-`;
+
+  &:focus {
+    outline: none;
+    background: #005f73;
+  }
+`
 
 const ContentArea = styled.div`
   flex: 1;
   padding: 20px;
-`;
+`
 
 const ProductsGrid = styled.div`
   display: grid;
@@ -69,8 +76,7 @@ const ProductsGrid = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
   }
-
-`;
+`
 
 const ProductCard = styled.div`
   position: relative;
@@ -81,7 +87,7 @@ const ProductCard = styled.div`
   &:hover {
     transform: scale(1.05);
   }
-`;
+`
 
 const ProductImage = styled.img`
   width: 300px;
@@ -89,7 +95,7 @@ const ProductImage = styled.img`
   object-fit: cover;
   border-radius: 10px;
   border: 5px solid var(--color-grey-300);
-`;
+`
 
 const ProductName = styled.p`
   margin-top: 10px;
@@ -97,7 +103,7 @@ const ProductName = styled.p`
   font-weight: 600;
   text-align: center;
   color: var(--color-grey-400);
-`;
+`
 
 const CloseButton = styled.button`
   position: absolute;
@@ -119,7 +125,7 @@ const CloseButton = styled.button`
   &:hover {
     background-color: #005f73;
   }
-`;
+`
 
 const BackButton = styled.button`
   position: absolute;
@@ -128,44 +134,58 @@ const BackButton = styled.button`
   background: none;
   color: var(--color-grey-800);
   border: none;
-  width: 40px; 
+  width: 40px;
   height: 40px;
-  border-radius: 50%; 
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px; 
+  font-size: 18px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 
   &:hover {
-    background-color:  #005f73; 
-    transform: scale(1.1); 
+    background-color: #005f73;
+    transform: scale(1.1);
   }
 
   @media (min-width: 769px) {
-    display: none; 
+    display: none;
   }
-`;
+`
 
-export default function ProductsList({useProducts}) {
-  const { products, isLoading, error } = useProducts();
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [fullscreenImage, setFullscreenImage] = useState(null);
+export default function ProductsList ({ useProducts }) {
+  const { products, isLoading, error } = useProducts()
+  const [selectedCategory, setSelectedCategory] = useState(null)
+  const [fullscreenImage, setFullscreenImage] = useState(null)
+  const [searchParams, setSearchParams] = useSearchParams()
 
-  
   useEffect(() => {
-    if (!isLoading && window.innerWidth >= 769) {
-      setSelectedCategory(products.length > 0 ? products[0].category : null);
-    }
-  }, [products, isLoading]);
+    if (!isLoading && products.length > 0) {
+      const categoryFromURL = searchParams.get('category')
 
-  if (isLoading) return <Spinner />;
-  if (error) return <div>Resimleri yüklerken hata oluştu</div>;
+      if (
+        categoryFromURL &&
+        products.some(p => p.category === categoryFromURL)
+      ) {
+        setSelectedCategory(categoryFromURL)
+      } else if (window.innerWidth >= 769) {
+        setSelectedCategory(products[0].category)
+      }
+    }
+  }, [products, isLoading, searchParams])
+
+  if (isLoading) return <Spinner />
+  if (error) return <div>Resimleri yüklerken hata oluştu</div>
 
   const filteredProducts = selectedCategory
     ? products.find(cat => cat.category === selectedCategory)?.items || []
-    : [];
+    : []
+
+  const handleCategoryChange = category => {
+    setSelectedCategory(category)
+    setSearchParams({ category })
+  }
 
   return (
     <PageContainer>
@@ -173,9 +193,7 @@ export default function ProductsList({useProducts}) {
         {products.map(({ category }) => (
           <CategoryButton
             key={category}
-            onClick={() => {
-              setSelectedCategory(category);
-            }}
+            onClick={() => handleCategoryChange(category)}
           >
             {category}
           </CategoryButton>
@@ -184,7 +202,9 @@ export default function ProductsList({useProducts}) {
 
       {selectedCategory && (
         <ContentArea>
-          <BackButton onClick={() => setSelectedCategory(null)}>{"<-"}</BackButton>
+          <BackButton onClick={() => setSelectedCategory(null)}>
+            {'<-'}
+          </BackButton>
           <ProductsGrid>
             {filteredProducts.map(item => (
               <ProductCard
@@ -205,9 +225,11 @@ export default function ProductsList({useProducts}) {
           link={fullscreenImage}
           name={'Fullscreen Product'}
         >
-          <CloseButton onClick={() => setFullscreenImage(null)}>&times;</CloseButton>
+          <CloseButton onClick={() => setFullscreenImage(null)}>
+            &times;
+          </CloseButton>
         </FullscreenImagePage>
       )}
     </PageContainer>
-  );
+  )
 }

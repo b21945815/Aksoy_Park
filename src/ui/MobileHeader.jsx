@@ -151,6 +151,7 @@ function MobileHeader() {
           <FiChevronLeft size={30} color="var(--color-grey-900)" />
         </BackButton>
         <MenuLink to="/works" onClick={toggleMenu}>Çalışmalarımız</MenuLink>
+        <MenuLink to="/examples" onClick={toggleMenu}>Örnekler</MenuLink>
         <MenuLink to="/information" onClick={toggleMenu}>Kurumsal</MenuLink>
         <MenuLink to="#" onClick={openProducts}>Ürünler</MenuLink>
       </MenuContainer>

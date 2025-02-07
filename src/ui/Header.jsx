@@ -78,6 +78,8 @@ function Header ({ openModal }) {
         return 'Kurumsal'
       case '/works':
         return 'Çalışmalarımız'
+      case '/examples':
+        return 'Örnekler'
       default:
         return ''
     }
@@ -91,6 +93,7 @@ function Header ({ openModal }) {
           <NavLinks>
             <NavLink to='/information'>Kurumsal</NavLink>
             <NavLink to='/works'>Çalışmalarımız</NavLink>
+            <NavLink to='/examples'>Örnekler</NavLink>
             <NavLink as='button' onClick={openModal}>
               <HamburgerWrapper>
                 <FiMenu
@@ -103,7 +106,7 @@ function Header ({ openModal }) {
             </NavLink>
           </NavLinks>
         </div>
-        <ContactInfo phone='+90 536 636 28 97' email='info@example.com' />
+        <ContactInfo phone='+90 536 636 28 97' email='aksoypark@gmail.com' />
         <NavLinks>
           {isAuthenticated && <UserImage />}
           <HeaderMenu isAuthenticated={isAuthenticated} />

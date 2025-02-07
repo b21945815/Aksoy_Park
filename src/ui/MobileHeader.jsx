@@ -113,6 +113,8 @@ function MobileHeader() {
         return 'Kurumsal';
       case '/works':
         return 'Çalışmalarımız';
+      case '/examples':
+        return 'Örnekler';
       default:
         return '';
     }

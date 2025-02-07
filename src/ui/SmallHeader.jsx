@@ -83,6 +83,7 @@ function SmallHeader ({ openModal }) {
         <NavLinks>
           <NavLink to='/information'>Kurumsal</NavLink>
           <NavLink to='/works'>Çalışmalarımız</NavLink>
+          <NavLink to='/examples'>Örnekler</NavLink>
           <NavLink as='button' onClick={openModal}>
             <HamburgerWrapper>
               <FiMenu
@@ -95,7 +96,7 @@ function SmallHeader ({ openModal }) {
           </NavLink>
         </NavLinks>
       </SmallHeaderContent>
-      <ContactInfo phone='+90 536 636 28 97' email='info@example.com' />
+      <ContactInfo phone='+90 536 636 28 97' email='aksoypark@gmail.com' />
       <NavLinks>
         <HeaderMenu isAuthenticated={false} />
       </NavLinks>

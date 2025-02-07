@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import PageNotFound from './pages/PageNotFound'
 import AppLayout from './ui/AppLayout'
 import Works from './pages/Works'
+import Examples from './pages/Examples'
 import { DarkModeProvider } from './context/DarkModeContext'
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -31,6 +32,7 @@ function App () {
               <Route index element={<Navigate replace to='information' />} />
               <Route path='information' element={<Information />} />
               <Route path='works' element={<Works />} />
+              <Route path='examples' element={<Examples />} />
               <Route path='admin' element={<Admin />} />
             </Route>
 

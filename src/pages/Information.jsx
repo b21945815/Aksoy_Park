@@ -10,7 +10,7 @@ function Information() {
       <Row>
         <p>
           <strong>
-            Aksoy Park ve Kent Ekipmanları, peyzaj ve oyun grubu tadilat çalışmalarında uzmanlaşmış bir firmadır. Kaliteli hizmet anlayışıyla sektörde öncü konumdadır.
+            Aksoy Park ve Kent Ekipmanları, peyzaj, oyun grubu ve tadilat çalışmalarında uzmanlaşmış bir firmadır. Kaliteli hizmet anlayışıyla sektörde güvenilir bir konuma sahiptir. 
           </strong>
         </p>
         <p>
@@ -20,7 +20,7 @@ function Information() {
           Müşteri memnuniyetini ön planda tutarak, projelerimizi zamanında ve eksiksiz teslim etmeyi hedeflemekteyiz. Kalite ve güvenilirlik, hizmetlerimizin temelini oluşturmaktadır.
         </p>
         <p>
-          Aksoy Park ve Kent Ekipmanları olarak, sektördeki yenilikleri takip ederek, en güncel ve etkili çözümleri sunmaktayız. Peyzaj ve oyun grubu tadilat ihtiyaçlarınız için profesyonel hizmetler sunuyoruz.
+          Aksoy Park ve Kent Ekipmanları olarak, sektördeki yenilikleri takip ederek, en güncel ve etkili çözümleri sunmaktayız. Peyzaj, oyun grubu ve tadilat ihtiyaçlarınız için profesyonel hizmetler sunuyoruz.
         </p>
       </Row>
       <Logo size="22rem"></Logo>

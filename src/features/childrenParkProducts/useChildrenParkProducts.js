@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-const FILE_URL = "/products.json"; 
+const FILE_URL = "/childrenParkProducts.json"; 
 
-export function useProducts() {
+export function useChildrenParkProducts() {
   const { data: products, isLoading, error } = useQuery({
-    queryKey: ["products"],
+    queryKey: ["childrenParkProducts"],
     queryFn: async () => {
       try {
         const response = await axios.get(FILE_URL); 

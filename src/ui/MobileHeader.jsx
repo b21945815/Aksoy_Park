@@ -4,7 +4,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { FiMenu, FiChevronLeft } from 'react-icons/fi';
 import Logo from './Logo';
 import HeaderMenu from './HeaderMenu';
-import Products from '../pages/Products';
+import Products from '../pages/ChildrenParkProducts';
 
 const StyledHeader = styled.header`
   background-color: var(--color-green-100);
@@ -153,7 +153,7 @@ function MobileHeader() {
         <MenuLink to="/information" onClick={toggleMenu}>Kurumsal</MenuLink>
         <MenuLink to="/works" onClick={toggleMenu}>Çalışmalarımız</MenuLink>
         <MenuLink to="/examples" onClick={toggleMenu}>Örnekler</MenuLink>
-        <MenuLink to="#" onClick={openProducts}>Ürünler</MenuLink>
+        <MenuLink to="#" onClick={openProducts}>Çocuk Parkı Ürünleri</MenuLink>
       </MenuContainer>
 
       {isProductsOpen && <Products onClose={closeProducts} />}

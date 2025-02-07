@@ -154,10 +154,11 @@ const BackButton = styled.button`
   }
 `
 
-export default function ProductsList ({ useProducts }) {
+export default function ProductsList ({ useProducts, mainCategory }) {
   const { products, isLoading, error } = useProducts()
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [fullscreenImage, setFullscreenImage] = useState(null)
+  const [fullscreenImageName, setFullscreenImageName] = useState(null)
   const [searchParams, setSearchParams] = useSearchParams()
 
   useEffect(() => {
@@ -186,7 +187,6 @@ export default function ProductsList ({ useProducts }) {
     setSelectedCategory(category)
     setSearchParams({ category })
   }
-
   return (
     <PageContainer>
       <Sidebar isOpen={window.innerWidth >= 769 || !selectedCategory}>
@@ -209,7 +209,10 @@ export default function ProductsList ({ useProducts }) {
             {filteredProducts.map(item => (
               <ProductCard
                 key={item.name}
-                onClick={() => setFullscreenImage(item.url)}
+                onClick={() => {
+                  setFullscreenImage(item.url)
+                  setFullscreenImageName(item.name)
+                }}
               >
                 <ProductImage src={item.url} alt={item.name} />
                 <ProductName>{item.name}</ProductName>
@@ -218,12 +221,13 @@ export default function ProductsList ({ useProducts }) {
           </ProductsGrid>
         </ContentArea>
       )}
-
+      
       {fullscreenImage && (
         <FullscreenImagePage
           closeFullscreen={() => setFullscreenImage(null)}
           link={fullscreenImage}
-          name={'Fullscreen Product'}
+          name={fullscreenImageName}
+          mainCategory={mainCategory}
         >
           <CloseButton onClick={() => setFullscreenImage(null)}>
             &times;

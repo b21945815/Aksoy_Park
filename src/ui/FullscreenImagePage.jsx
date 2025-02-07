@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const FullscreenImageWrapper = styled.div`
@@ -17,10 +18,42 @@ const FullscreenImage = styled.img`
   max-width: 90%;
   max-height: 90%;
 `
-export default function FullscreenImagePage ({closeFullscreen, link, name}) {
+
+const DetailsButton = styled.button`
+  position: absolute;
+  ${props => (props.isMobile ? 'bottom: 10px;' : 'right: 10px; top: 50%; transform: translateY(-50%);')}
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #45a049;
+  }
+
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+`
+
+export default function FullscreenImagePage({ closeFullscreen, link, name, mainCategory }) {
+  const navigate = useNavigate()
+  const isMobile = window.innerWidth <= 768
+  const goToDetails = () => {
+    navigate(`/${mainCategory}/${name}`)
+  }
+
   return (
     <FullscreenImageWrapper onClick={closeFullscreen}>
       <FullscreenImage src={link} alt={name} />
+      {mainCategory && <DetailsButton isMobile={isMobile} onClick={goToDetails}>
+        Ayrıntıya Git
+      </DetailsButton>}
     </FullscreenImageWrapper>
   )
 }

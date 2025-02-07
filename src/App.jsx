@@ -11,6 +11,7 @@ import PageNotFound from './pages/PageNotFound'
 import AppLayout from './ui/AppLayout'
 import Works from './pages/Works'
 import Examples from './pages/Examples'
+import ChildrenParkProduct from './pages/ChildrenParkProduct'
 import { DarkModeProvider } from './context/DarkModeContext'
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +35,7 @@ function App () {
               <Route path='works' element={<Works />} />
               <Route path='examples' element={<Examples />} />
               <Route path='admin' element={<Admin />} />
+              <Route path="/childrenParkProduct/:itemName" element={<ChildrenParkProduct />} />
             </Route>
 
             <Route path='login' element={<Login />} />

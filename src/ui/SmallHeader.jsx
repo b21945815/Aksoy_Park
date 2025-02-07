@@ -91,7 +91,7 @@ function SmallHeader ({ openModal }) {
                 color='var(--color-grey-900)'
                 style={{ cursor: 'pointer' }}
               />
-              <span>Ürünler</span>
+              <span>Çocuk Parkı Ürünleri</span>
             </HamburgerWrapper>
           </NavLink>
         </NavLinks>

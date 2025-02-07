@@ -32,7 +32,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  height: 100%;
 
   @media (max-width: 768px) {
     padding: 0 1rem;

@@ -11,14 +11,16 @@ const SidebarWrapper = styled.div`
 
 const CategoryButton = styled.button`
   width: 100%;
-  padding: 15px;
+  padding: 18px;
   border: none;
   background: var(--color-grey-400);
   color: white;
-  text-align: left;
+  text-align: center;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
+  outline: none;
+  box-shadow: none;
   
   &:hover {
     background: linear-gradient(to right, var(--color-grey-500), var(--color-grey-400));

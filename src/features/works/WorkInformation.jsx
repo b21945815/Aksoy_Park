@@ -25,7 +25,7 @@ const StyledImage = styled.img`
   border: 5px solid var(--color-grey-300);
 
   @media (max-width: 768px) {
-    max-height: 150px; /* Mobilde daha küçük yükseklik */
+    max-height: 200px; /* Mobilde daha küçük yükseklik */
   }
 `
 

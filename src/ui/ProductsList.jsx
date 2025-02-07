@@ -153,6 +153,7 @@ export default function ProductsList({useProducts}) {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [fullscreenImage, setFullscreenImage] = useState(null);
 
+  
   useEffect(() => {
     if (!isLoading && window.innerWidth >= 769) {
       setSelectedCategory(products.length > 0 ? products[0].category : null);

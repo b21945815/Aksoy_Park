@@ -27,7 +27,7 @@ const WorksList = () => {
   if (isLoading) return <Spinner />
 
   if (error) {
-    return <div>Resimleri yüklerken hata yaşandı</div>
+    return <div>Resimleri yüklerken hata oluştu</div>
   }
   if (!works || works.length === 0) 
     return <p>Sistemde resim bulunmamaktadır</p>

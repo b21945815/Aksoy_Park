@@ -1,5 +1,7 @@
 import { useExamples } from './useExamples'
+import { useState, useEffect } from 'react';
 import Spinner from '../../ui/Spinner'
+import ModernSidebar from '../../ui/ModernSidebar'
 import styled from 'styled-components'
 import ExamplesInformation from './ExamplesInformation'
 
@@ -23,18 +25,28 @@ const GridWrapper = styled.div`
 
 const ExamplesList = () => {
   const { examples, isLoading, error } = useExamples()
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  useEffect(() => {
+    if (!isLoading && window.innerWidth >= 769) {
+      setSelectedCategory(examples.length > 0 ? examples[0].category : null);
+    }
+  }, [examples, isLoading]);
 
   if (isLoading) return <Spinner />
 
   if (error) {
-    return <div>Resimleri yüklerken hata yaşandı</div>
+    return <div>Resimleri yüklerken hata oluştu</div>
   }
-  if (!examples || examples.length === 0)
-    return <p>Sistemde resim bulunmamaktadır</p>
+
+  const filteredProducts = selectedCategory
+    ? examples.find(cat => cat.category === selectedCategory)?.items || []
+    : [];
+
   return (
     <ExamplesListWrapper>
       <GridWrapper>
-        {examples.map((example, index) => (
+        {filteredProducts.map((example, index) => (
           <ExamplesInformation key={index} name={example.name} link={example.url} />
         ))}
       </GridWrapper>

@@ -105,28 +105,6 @@ const ProductName = styled.p`
   color: var(--color-grey-400);
 `
 
-const CloseButton = styled.button`
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background-color: var(--color-grey-900);
-  color: var(--color-grey-000);
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  cursor: pointer;
-  transition: background 0.3s;
-
-  &:hover {
-    background-color: #005f73;
-  }
-`
-
 const BackButton = styled.button`
   position: absolute;
   top: 15px;
@@ -154,7 +132,7 @@ const BackButton = styled.button`
   }
 `
 
-export default function ProductsList ({ useProducts, mainCategory }) {
+export default function ProductsList ({ useProducts, mainCategory, closeThisPage }) {
   const { products, isLoading, error } = useProducts()
   const [selectedCategory, setSelectedCategory] = useState(null)
   const [fullscreenImage, setFullscreenImage] = useState(null)
@@ -228,10 +206,8 @@ export default function ProductsList ({ useProducts, mainCategory }) {
           link={fullscreenImage}
           name={fullscreenImageName}
           mainCategory={mainCategory}
+          closeThisPage={closeThisPage}
         >
-          <CloseButton onClick={() => setFullscreenImage(null)}>
-            &times;
-          </CloseButton>
         </FullscreenImagePage>
       )}
     </PageContainer>

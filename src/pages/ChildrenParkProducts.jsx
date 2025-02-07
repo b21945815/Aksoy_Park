@@ -6,7 +6,7 @@ import { useChildrenParkProducts } from '../features/childrenParkProducts/useChi
 const ChildrenParkProducts = ({ onClose }) => {
   return (
     <ProductPage onClose={onClose}>
-      <ProductsList mainCategory="childrenParkProduct" useProducts={useChildrenParkProducts}></ProductsList>
+      <ProductsList mainCategory="childrenParkProduct" useProducts={useChildrenParkProducts} closeThisPage={onClose}></ProductsList>
     </ProductPage>
   )
 }

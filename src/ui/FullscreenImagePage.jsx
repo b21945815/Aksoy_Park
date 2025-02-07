@@ -17,6 +17,11 @@ const FullscreenImageWrapper = styled.div`
 const FullscreenImage = styled.img`
   max-width: 90%;
   max-height: 90%;
+  
+  @media (max-width: 1400px) and (min-width: 768px) {
+    max-width: 75%; 
+    max-height: 80%;
+  }
 `
 
 const DetailsButton = styled.button`
@@ -41,10 +46,11 @@ const DetailsButton = styled.button`
   }
 `
 
-export default function FullscreenImagePage({ closeFullscreen, link, name, mainCategory }) {
+export default function FullscreenImagePage({ closeFullscreen, link, name, mainCategory, closeThisPage }) {
   const navigate = useNavigate()
   const isMobile = window.innerWidth <= 768
   const goToDetails = () => {
+    closeThisPage()
     navigate(`/${mainCategory}/${name}`)
   }
 

@@ -9,7 +9,21 @@
           "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0002.jpg",
           "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Products/IMG-20250201-WA0007.jpg"
         ],
-        "size-data": [1,2,3,4]
+        "size-data": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "list-data": [
+          "Platform: 1 Adet",
+          "Merdiven: 1 Adet",
+          "H:100 Düz Kaydırak: 1 Adet",
+          "Çatı: 1 Adet",
+          "Salıncak: 2 Adet",
+          "Metal Pano: 2 Adet",
+          "Metal Kaydırak Panosu: 1 Adet"
+        ]
       },
       {
         "name": "Kreş Seri-02",

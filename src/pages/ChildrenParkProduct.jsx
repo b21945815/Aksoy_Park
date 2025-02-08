@@ -21,7 +21,10 @@ const RowContainer = styled.div`
   height: 100%;
   width: 100%;
   margin: 0;
-`;
+  & > *:not(:last-child) {
+    margin-bottom: 8px;
+  }
+`
 
 const Content = styled.div`
   flex: 1;
@@ -32,34 +35,32 @@ const Content = styled.div`
   padding: 10px;
 
   @media (min-width: 800px) {
-    /* Adjustments for larger screens if necessary */
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
   }
-`;
+`
 
 const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-right: 20px;
+  align-items: center; 
+  width: 100%;
+  margin: 0;
 
   @media (min-width: 800px) {
     flex-direction: row;
-    align-items: flex-start;
-    margin-right: 40px;
-    margin-left: 0;
+    justify-content: center;
+    align-items: center;
   }
-`
+`;
 
 const MainImage = styled.img`
   max-width: 100%;
   max-height: 500px;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
 
   @media (min-width: 800px) {
     max-width: 70%;
@@ -69,6 +70,8 @@ const MainImage = styled.img`
 
 const ThumbnailsContainer = styled.div`
   display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
   overflow-x: auto;
   margin-top: 10px;
   width: 100%;
@@ -81,7 +84,8 @@ const ThumbnailsContainer = styled.div`
     overflow-y: auto;
     width: 100px;
   }
-`
+`;
+
 
 const Thumbnail = styled.img`
   width: 60px;
@@ -170,7 +174,10 @@ function ChildrenParkProduct () {
               </ThumbnailsContainer>
               <MainImage src={mainImage} alt={itemData.name} />
             </ImageContainer>
-            <ChildrenParkProductInformation isMobile={isMobile}></ChildrenParkProductInformation>
+            <ChildrenParkProductInformation
+              item={itemData}
+              isMobile={isMobile}
+            ></ChildrenParkProductInformation>
           </RowContainer>
         </Content>
       ) : (

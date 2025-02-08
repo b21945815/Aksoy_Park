@@ -12,11 +12,11 @@ const Container = styled.div`
   border-radius: 12px;
 `;
 
-const ChildrenParkProductInformation = ({ isMobile }) => {
+const ChildrenParkProductInformation = ({ item, isMobile }) => {
   return (
     <Container isMobile={isMobile}>
       <ChildrenParkProductMainInformation />
-      <ChildrenParkProductSubInformation />
+      <ChildrenParkProductSubInformation item={item}/>
     </Container>
   );
 };

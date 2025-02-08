@@ -26,12 +26,17 @@ export function useChildrenParkProducts() {
               sizeData.push(1);  
               sizeData.push(1);  
             }
+            const listData = item['list-data'] || [];
+            if (!sizeData.length) {
+              sizeData.push("");  
+            }
 
             return {
               name: item.name,
               url: item.url,
               subUrls: subUrls,
-              sizeData: sizeData
+              sizeData: sizeData,
+              listData: listData
             };
           })
         }));

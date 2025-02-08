@@ -25,27 +25,25 @@ const Text = styled.p`
 const List = styled.ul`
   color: #34495e;
   line-height: 1.5;
-  padding-left: 20px;
 `;
 
-const ChildrenParkProductSubInformation = () => {
+const ChildrenParkProductSubInformation = ({ item }) => {
+  const sizeData = item.sizeData;
+  const listData = item.listData;
+
   return (
     <Container>
       <Title>Özellikler</Title>
-      <Text>Oturum Alanı: 3.5mt x 5.5mt</Text>
-      <Text>Güvenli Kullanım Alanı: 6mt x 7.5mt</Text>
-      
+      <Text>Oturum Alanı: {sizeData[0]} Metre x {sizeData[1]} Metre</Text>
+      <Text>Güvenli Kullanım Alanı: {sizeData[2]} Metre x {sizeData[3]} Metre</Text>
+
       <Title>Aktiviteler</Title>
       <List>
-        <li>Platform: 1 Adet</li>
-        <li>Merdiven: 1 Adet</li>
-        <li>H:100 Düz Kaydırak: 1 Adet</li>
-        <li>Çatı: 1 Adet</li>
-        <li>Salıncak: 2 Adet</li>
-        <li>Metal Pano: 2 Adet</li>
-        <li>Metal Kaydırak Panosu: 1 Adet</li>
+        {listData.map((activity, index) => (
+          <li key={index}>{activity}</li>
+        ))}
       </List>
-      
+
       <Text><strong>* Oyun grubu taşıyıcı direkleri Ø114 x 2mm TSE’li borulardan imal edilmektedir.</strong></Text>
     </Container>
   );

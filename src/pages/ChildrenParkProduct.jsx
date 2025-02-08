@@ -10,13 +10,14 @@ const Container = styled.div`
   flex-direction: column;
   height: 100%;
   align-items: center;
+  justify-content: center;
   width: 100%;
   margin: 0;
 `
 
 const RowContainer = styled.div`
   display: flex;
-  flex-direction: column; /* Change to column to stack children vertically */
+  flex-direction: column;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -32,7 +33,7 @@ const Content = styled.div`
 
   @media (min-width: 800px) {
     /* Adjustments for larger screens if necessary */
-    flex-direction: column; /* Ensure it remains column on larger screens */
+    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
   }
@@ -41,6 +42,7 @@ const Content = styled.div`
 const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-right: 20px;
 
@@ -56,6 +58,7 @@ const MainImage = styled.img`
   max-width: 100%;
   max-height: 500px;
   align-items: center;
+  justify-content: center;
   margin-right: 20px;
 
   @media (min-width: 800px) {
@@ -167,7 +170,7 @@ function ChildrenParkProduct () {
               </ThumbnailsContainer>
               <MainImage src={mainImage} alt={itemData.name} />
             </ImageContainer>
-            <ChildrenParkProductInformation></ChildrenParkProductInformation>
+            <ChildrenParkProductInformation isMobile={isMobile}></ChildrenParkProductInformation>
           </RowContainer>
         </Content>
       ) : (

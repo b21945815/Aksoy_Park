@@ -4,7 +4,7 @@ import ChildrenParkProductSubInformation from "./ChildrenParkProductSubInformati
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   gap: 20px;
   padding: 20px;

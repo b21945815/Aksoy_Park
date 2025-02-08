@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useChildrenParkProducts } from '../features/childrenParkProducts/useChildrenParkProducts';
+import ChildrenParkProductInformation from '../features/childrenParkProducts/ChildrenParkProductInformation';
 import { useParams } from 'react-router-dom';
 import Spinner from '../ui/Spinner';
 import styled from 'styled-components';
@@ -106,6 +107,7 @@ const Text = styled.p`
 
 function ChildrenParkProduct() {
   const { categoryName, itemName } = useParams(); 
+  const [isMobile, setIsMobile] = useState(false)
   const { products, isLoading, error } = useChildrenParkProducts();
   const [selectedImage, setSelectedImage] = useState('');
 
@@ -117,6 +119,19 @@ function ChildrenParkProduct() {
   const handleThumbnailClick = (url) => {
     setSelectedImage(url);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 800)
+    }
+
+    handleResize()
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   if (isLoading) return <Spinner />;
   if (error) return <div>Resimleri yüklerken hata oluştu</div>;
@@ -139,7 +154,7 @@ function ChildrenParkProduct() {
             </ThumbnailsContainer>
             <MainImage src={mainImage} alt={itemData.name} />
           </ImageContainer>
-          <Text>{itemData.name}</Text>
+          <ChildrenParkProductInformation></ChildrenParkProductInformation>
         </Content>
       ) : (
         <Text>Ürün bulunamadı.</Text>

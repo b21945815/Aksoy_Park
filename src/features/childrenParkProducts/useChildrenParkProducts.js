@@ -19,11 +19,19 @@ export function useChildrenParkProducts() {
             if (!subUrls.length) {
               subUrls.push(item.url);  
             }
+            const sizeData = item['size-data'] || [];
+            if (!sizeData.length) {
+              sizeData.push(1);  
+              sizeData.push(1);  
+              sizeData.push(1);  
+              sizeData.push(1);  
+            }
 
             return {
               name: item.name,
               url: item.url,
-              subUrls: subUrls
+              subUrls: subUrls,
+              sizeData: sizeData
             };
           })
         }));

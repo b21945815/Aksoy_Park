@@ -44,7 +44,6 @@ const ChildrenParkProductSubInformation = ({ item }) => {
         ))}
       </List>
 
-      <Text><strong>* Oyun grubu taşıyıcı direkleri Ø114 x 2mm TSE’li borulardan imal edilmektedir.</strong></Text>
     </Container>
   );
 };

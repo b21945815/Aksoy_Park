@@ -1,105 +1,55 @@
 {
   "works": {
-    "work-1": [
+    "Parklar": [
       {
-        "name": "Mini Bahçe",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/1.png"
+        "name": "Zemin Döşeme",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.25%20(2).jpeg"
       },
       {
         "name": "Oyun Parkı",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/2.png"
-      },
-      {
-        "name": "Tırmanma Halatı",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/3.png"
-      },
-      {
-        "name": "Top Havuzu",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/4.png"
-      },
-      {
-        "name": "Büyük Bahçe",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/5.png"
-      },
-      {
-        "name": "Taş Toprak",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/6.png"
-      },
-      {
-        "name": "Mini Bahçe2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/1.png"
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.25%20(6).jpeg"
       },
       {
         "name": "Oyun Parkı2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/2.png"
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.26%20(1).jpeg"
       },
       {
-        "name": "Tırmanma Halatı2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/3.png"
+        "name": "Oyun Parkı3",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.26%20(3).jpeg"
       },
       {
-        "name": "Top Havuzu2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/4.png"
+        "name": "Oyun Parkı4",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.26%20(7).jpeg"
       },
       {
-        "name": "Büyük Bahçe2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/5.png"
-      },
-      {
-        "name": "Taş Toprak2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/6.png"
+        "name": "Oyun Parkı5",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.28.jpeg"
       }
     ],
-    "work-2": [
+    "Peyzaj Çalışmaları": [
       {
-        "name": "Mini Bahçe2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/1.png"
+        "name": "Site Parkı",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/WhatsApp%20Image%202025-02-09%20at%2018.42.28%20(14).jpeg"
       },
       {
-        "name": "Oyun Parkı2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/2.png"
+        "name": "Spor Aletleri",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/WhatsApp%20Image%202025-02-09%20at%2018.42.29%20(3).jpeg"
       },
       {
-        "name": "Tırmanma Halatı2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/3.png"
+        "name": "Kamelya İnşaatı",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/cat%C4%B11.jpeg"
       },
       {
-        "name": "Top Havuzu2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/4.png"
+        "name": "Kamelya",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/cat%C4%B12.jpeg"
       },
       {
-        "name": "Büyük Bahçe2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/5.png"
+        "name": "Kamelya2",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/cat%C4%B13.jpeg"
       },
       {
-        "name": "Taş Toprak2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/6.png"
-      }
-    ],
-    "work-3": [
-      {
-        "name": "Mini Bahçe2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/1.png"
-      },
-      {
-        "name": "Oyun Parkı2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/2.png"
-      },
-      {
-        "name": "Tırmanma Halatı2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/3.png"
-      },
-      {
-        "name": "Top Havuzu2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/4.png"
-      },
-      {
-        "name": "Büyük Bahçe2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/5.png"
-      },
-      {
-        "name": "Taş Toprak2",
-        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/6.png"
+        "name": "Büyük Park",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/eniyi.jpeg"
       }
     ]
   }

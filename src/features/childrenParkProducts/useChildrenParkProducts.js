@@ -31,12 +31,15 @@ export function useChildrenParkProducts() {
               sizeData.push("");  
             }
 
+            const isWood = item.hasOwnProperty('isWood') ? item.isWood : false;
+
             return {
               name: item.name,
               url: item.url,
               subUrls: subUrls,
               sizeData: sizeData,
-              listData: listData
+              listData: listData,
+              isWood: isWood,
             };
           })
         }));

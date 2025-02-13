@@ -11,11 +11,10 @@ const Container = styled.div`
   background-color: var(--color-grey-200);
   border-radius: 12px;
 `;
-
 const ChildrenParkProductInformation = ({ item, isMobile }) => {
   return (
     <Container isMobile={isMobile}>
-      <ChildrenParkProductMainInformation />
+      <ChildrenParkProductMainInformation otherMessage={item.isWood}/>
       <ChildrenParkProductSubInformation item={item}/>
     </Container>
   );

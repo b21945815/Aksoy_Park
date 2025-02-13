@@ -26,9 +26,12 @@ const BoldText = styled.span`
   font-weight: bold;
 `;
 
-const ChildrenParkProductMainInformation = () => {
+const ChildrenParkProductMainInformation = ({otherMessage}) => {
   return (
     <Container>
+      {!otherMessage && <Text>-Oyun grubu taşıyıcı direkleri Ø114 x 2,5 mm TSE’li borulardan
+      imal edilmektedir.</Text>}
+      {otherMessage && <Text>- Tüm Ahşap Aksamlar 1. Sınıf Emprenyeli Sarı Çamdan İmal Edilmektedir.</Text>}
       <Text>
         Tüm metal aksama elektrostatik toz boya öncesi <BoldText>kumlama</BoldText> yapılmaktadır.
       </Text>

@@ -1,4 +1,4 @@
-import{u as a,a as t,j as e,H as r,L as l}from"./index-ec6ec530.js";const n=a.div`
+import{u as a,a as t,j as e,H as r,L as l}from"./index-b50735ad.js";const n=a.div`
   display: flex;
 
   ${i=>i.type==="horizontal"&&t`

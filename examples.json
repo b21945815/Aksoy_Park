@@ -1,0 +1,30 @@
+{
+  "examples": {
+    "example": [
+      {
+        "name": "Spor Alanları",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/WhatsApp%20Image%202025-02-09%20at%2018.42.29%20(3).jpeg"
+      },
+      {
+        "name": "Kamelyalar",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/cat%C4%B13.jpeg"
+      },
+      {
+        "name": "Yomra Mustafa Çam Parkı",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Images/IMG-20250217-WA0004.jpg"
+      },
+      {
+        "name": "Kaydırak",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.28.jpeg"
+      },
+      {
+        "name": "Kamelya İnşaat",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/cat%C4%B11.jpeg"
+      },
+      {
+        "name": "Oyun Parkı",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.26%20(7).jpeg"
+      }
+    ]
+  }
+}

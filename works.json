@@ -1,0 +1,56 @@
+{
+  "works": {
+    "Parklar": [
+      {
+        "name": "Zemin Döşeme",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.25%20(2).jpeg"
+      },
+      {
+        "name": "Oyun Parkı",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.25%20(6).jpeg"
+      },
+      {
+        "name": "Oyun Parkı2",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.26%20(1).jpeg"
+      },
+      {
+        "name": "Oyun Parkı3",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.26%20(3).jpeg"
+      },
+      {
+        "name": "Oyun Parkı4",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.26%20(7).jpeg"
+      },
+      {
+        "name": "Oyun Parkı5",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Park/WhatsApp%20Image%202025-02-09%20at%2018.42.28.jpeg"
+      }
+    ],
+    "Peyzaj Çalışmaları": [
+      {
+        "name": "Site Parkı",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/WhatsApp%20Image%202025-02-09%20at%2018.42.28%20(14).jpeg"
+      },
+      {
+        "name": "Spor Aletleri",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/WhatsApp%20Image%202025-02-09%20at%2018.42.29%20(3).jpeg"
+      },
+      {
+        "name": "Kamelya İnşaatı",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/cat%C4%B11.jpeg"
+      },
+      {
+        "name": "Kamelya",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/cat%C4%B12.jpeg"
+      },
+      {
+        "name": "Kamelya2",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/cat%C4%B13.jpeg"
+      },
+      {
+        "name": "Büyük Park",
+        "url": "https://raw.githubusercontent.com/b21945815/AksoyParkImages/refs/heads/main/Peyzaj/eniyi.jpeg"
+      }
+    ]
+  }
+}

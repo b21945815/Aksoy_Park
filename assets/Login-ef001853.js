@@ -1,4 +1,4 @@
-import{u as t,a as c,j as e,f as h,g as m,h as f,l as v,n as y,r as u,B as b,i as j,k as w,L,H as E}from"./index-b50735ad.js";const p=t.form`
+import{u as t,a as c,j as e,f as h,g as m,h as f,l as v,n as y,r as u,B as b,i as j,k as w,L,H as E}from"./index-ec6ec530.js";const p=t.form`
   ${r=>r.type==="regular"&&c`
       padding: 2.4rem 4rem;
 

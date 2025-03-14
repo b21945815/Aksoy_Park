@@ -15,24 +15,42 @@ const ButtonContainer = styled.div`
 `;
 
 function FloatingButtons() {
-  const [bottomSpacing, setBottomSpacing] = useState(20); 
-  const isMobile = window.innerWidth <= 800
+  const [bottomSpacing, setBottomSpacing] = useState(20);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 800);
+  
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 800);
+    };
+    
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-      if (isMobile & (scrollY + windowHeight >= documentHeight - 40)) {
+      const buffer = 50; 
+      
+      if (isMobile && (scrollY + windowHeight >= documentHeight - buffer)) {
         setBottomSpacing(100); 
       } else {
         setBottomSpacing(20); 
       }
     };
+    
+    // Run initially
+    handleResize();
     handleScroll();
+    
+    // Add event listeners
+    window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [isMobile]);
-
+  
   return (
     <ButtonContainer bottom={bottomSpacing}>
       <ScrollToTop />

@@ -1,7 +1,7 @@
 import { SitemapStream } from "sitemap";
 import fs from "fs";
 
-const siteUrl = "https://aksoypark.com";
+const siteUrl = "https://aksoypark.com.tr";
 
 const links = [
   { url: "/", changefreq: "monthly", priority: 1.0 },
@@ -13,7 +13,7 @@ const links = [
 
 const sitemapStream = new SitemapStream({ hostname: siteUrl });
 
-const writeStream = fs.createWriteStream("./public/sitemap.xml");
+const writeStream = fs.createWriteStream("./public/sitemap2.xml");
 
 sitemapStream.pipe(writeStream); // stream'i dosyaya yazdırmak için pipe kullanıyoruz
 

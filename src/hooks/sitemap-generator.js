@@ -1,7 +1,7 @@
 import { SitemapStream } from "sitemap";
 import fs from "fs";
 
-const siteUrl = "https://aksoypark.com.tr";
+const siteUrl = "https://aksoypark.com";
 
 const links = [
   { url: "/", changefreq: "monthly", priority: 1.0 },
@@ -21,7 +21,7 @@ links.forEach(link => sitemapStream.write(link)); // Verileri yazıyoruz
 sitemapStream.end(); // Sonlandırıyoruz
 
 writeStream.on("finish", () => {
-  console.log("✅ Sitemap oluşturuldu: public/sitemap.xml");
+  console.log("✅ Sitemap oluşturuldu: public/sitemap2.xml");
 });
 
 writeStream.on("error", (err) => {

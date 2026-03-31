@@ -107,8 +107,6 @@ function MobileHeader() {
 
   const getDescription = () => {
     switch (location.pathname) {
-      case '/admin':
-        return 'Admin Sayfası';
       case '/information':
         return 'Kurumsal';
       case '/works':

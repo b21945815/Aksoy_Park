@@ -8,7 +8,6 @@ const links = [
   { url: "/works", changefreq: "monthly", priority: 0.8 },
   { url: "/information", changefreq: "monthly", priority: 0.8 },
   { url: "/examples", changefreq: "monthly", priority: 0.8 },
-  { url: "/admin", changefreq: "yearly", priority: 0.1 },
 ];
 
 const sitemapStream = new SitemapStream({ hostname: siteUrl });

@@ -5,8 +5,6 @@ import { Toaster } from 'react-hot-toast'
 
 import GlobalStyles from './styles/GlobalStyles'
 import Information from './pages/Information'
-import Admin from './pages/Admin'
-import Login from './pages/Login'
 import PageNotFound from './pages/PageNotFound'
 import AppLayout from './ui/AppLayout'
 import Works from './pages/Works'
@@ -34,11 +32,8 @@ function App () {
               <Route path='information' element={<Information />} />
               <Route path='works' element={<Works />} />
               <Route path='examples' element={<Examples />} />
-              <Route path='admin' element={<Admin />} />
               <Route path="/childrenParkProduct/:categoryName/:itemName" element={<ChildrenParkProduct />} />
             </Route>
-
-            <Route path='login' element={<Login />} />
             <Route path='*' element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>

@@ -1,8 +1,7 @@
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import HeaderMenu from './HeaderMenu'
 import HeaderDescription from './HeaderDescription'
-import UserImage from '../features/authentication/UserImage'
-import { useUser } from '../features/authentication/useUser'
 import { useLocation } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { FiMenu } from 'react-icons/fi'
@@ -67,13 +66,10 @@ const HamburgerWrapper = styled.div`
 `
 
 function Header ({ openModal }) {
-  const { isLoading, isAuthenticated } = useUser()
   const location = useLocation()
 
   const getDescription = () => {
     switch (location.pathname) {
-      case '/admin':
-        return 'Admin Sayfası'
       case '/information':
         return 'Kurumsal'
       case '/works':
@@ -108,8 +104,7 @@ function Header ({ openModal }) {
         </div>
         <ContactInfo phone='+90 536 636 28 97' email='aksoypark@gmail.com' />
         <NavLinks>
-          {isAuthenticated && <UserImage />}
-          <HeaderMenu isAuthenticated={isAuthenticated} />
+          <HeaderMenu/>
         </NavLinks>
       </StyledHeader>
       <HeaderDescription>{getDescription()}</HeaderDescription>
@@ -118,3 +113,7 @@ function Header ({ openModal }) {
 }
 
 export default Header
+
+Header.propTypes = {
+  openModal: PropTypes.func.isRequired,
+}

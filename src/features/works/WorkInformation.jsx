@@ -5,74 +5,69 @@ import FullscreenImagePage from '../../ui/FullscreenImagePage'
 const WorkInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   cursor: pointer;
   position: relative;
-  transition: transform 0.3s ease;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
   }
 `
 
 const StyledImage = styled.img`
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  height: 250px;
   object-fit: cover;
-  border-radius: 10px;
-  border: 5px solid var(--color-grey-300); 
+  transition: transform 0.5s ease;
 
-  @media (max-width: 800px) {
-    max-height: 200px; 
+  ${WorkInfoWrapper}:hover & {
+    transform: scale(1.05);
+  }
+`
+
+const TitleContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  padding: 3rem 1.5rem 1.5rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  ${WorkInfoWrapper}:hover & {
+    transform: translateY(0);
+    opacity: 1;
   }
 `
 
 const Title = styled.h2`
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 600;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  width: 100%;
   text-align: center;
-
-  ${WorkInfoWrapper}:hover & {
-    opacity: 1;
-  }
-
-  @media (max-width: 800px) {
-    font-size: 14px; 
-    padding: 3px;
-  }
+  margin: 0;
 `
 
 export default function WorkInformation ({ name, link }) {
   const [fullscreen, setFullscreen] = useState(false)
 
-  const handleImageClick = () => {
-    setFullscreen(true)
-  }
-
-  const closeFullscreen = () => {
-    setFullscreen(false)
-  }
   return (
     <>
-      <WorkInfoWrapper onClick={handleImageClick}>
+      <WorkInfoWrapper onClick={() => setFullscreen(true)}>
         <StyledImage src={link} alt={name} />
-        <Title>{name}</Title>
+        <TitleContainer>
+          <Title>{name}</Title>
+        </TitleContainer>
       </WorkInfoWrapper>
       {fullscreen && (
         <FullscreenImagePage
-          closeFullscreen={closeFullscreen}
+          closeFullscreen={() => setFullscreen(false)}
           link={link}
           name={name}
         />

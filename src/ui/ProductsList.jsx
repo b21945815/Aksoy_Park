@@ -7,58 +7,72 @@ import FullscreenImagePage from './FullscreenImagePage'
 const PageContainer = styled.div`
   display: flex;
   height: 100vh;
+  width: 100%;
   overflow-y: auto;
+  
   @media (max-width: 800px) {
     flex-direction: column;
+    align-items: stretch;
   }
 `
 
 const Sidebar = styled.div`
   width: 250px;
-  background: var(--color-grey-100);
+  background: var(--color-grey-50);
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1rem; 
+  border-right: 1px solid var(--color-grey-200);
   position: sticky;
   top: 0;
   height: 100vh;
 
   @media (max-width: 800px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
-    position: fixed;
     width: 100%;
-    height: auto;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    background: var(--color-grey-100);
-    padding: 10px;
-    overflow-y: auto;
-    max-height: 80vh;
-    padding-top: 50px;
+    height: 100%;
+    position: relative;
+    background: transparent;
+    padding: 60px 15px 20px; 
+    border-right: none;
   }
 `
 
 const CategoryButton = styled.button`
-  background: #008cba;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  margin: 5px 0;
+  background: transparent;
+  color: var(--color-grey-700);
+  border: 1px solid var(--color-grey-200);
+  padding: 1.4rem 2rem;
   cursor: pointer;
   width: 100%;
-  border-radius: 5px;
-  transition: background 0.3s;
-  outline: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  &:hover {
-    background: #005f73;
+  &:hover, &:focus {
+    background: var(--color-green-100);
+    color: var(--color-grey-900);
+    border-color: var(--color-green-700);
   }
 
-  &:focus {
-    outline: none;
-    background: #005f73;
+  &::after {
+    content: '›';
+    color: var(--color-grey-400);
+    font-size: 2.2rem;
+  }
+
+  @media (max-width: 800px) {
+    background: var(--color-grey-0);
+    border: 1px solid var(--color-grey-200);
+    box-shadow: var(--shadow-sm);
+    padding: 1.8rem 2rem; 
+    border-radius: 12px;
   }
 `
 
@@ -102,7 +116,7 @@ const ProductName = styled.p`
   font-size: 16px;
   font-weight: 600;
   text-align: center;
-  color: var(--color-grey-400);
+  color: var(--color-grey-600);
 `
 
 const BackButton = styled.button`

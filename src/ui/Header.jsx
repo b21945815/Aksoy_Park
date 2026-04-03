@@ -8,22 +8,51 @@ import { FiMenu } from 'react-icons/fi'
 import Logo from './Logo'
 import ContactInfo from './ContactInfo'
 
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
+
 const StyledHeader = styled.header`
   background-color: var(--color-green-100);
   color: var(--color-grey-900);
-  padding: 0.1rem 4.8rem;
+  padding: 1.5rem 4.8rem; 
   display: flex;
-  height: 15vh;
-  gap: 0.1rem;
+  flex-wrap: wrap; 
+  gap: 2rem;
   align-items: center;
   justify-content: space-between;
-  position: relative; 
+
+  @media (max-width: 1200px) {
+    padding: 1.5rem 2rem;
+    justify-content: center; 
+  }
+`
+
+const HeaderLeft = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 950px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 `
 
 const NavLinks = styled.div`
   display: flex;
   gap: 2rem;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 `
 
 const NavLink = styled(Link)`
@@ -82,9 +111,9 @@ function Header ({ openModal }) {
   }
 
   return (
-    <div style={{ height: '21vh' }}>
+    <HeaderWrapper>
       <StyledHeader>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2.4rem' }}>
+        <HeaderLeft>
           <Logo />
           <NavLinks>
             <NavLink to='/information'>Kurumsal</NavLink>
@@ -101,14 +130,16 @@ function Header ({ openModal }) {
               </HamburgerWrapper>
             </NavLink>
           </NavLinks>
-        </div>
+        </HeaderLeft>
+        
         <ContactInfo phone='+90 536 636 28 97' email='aksoypark@gmail.com' />
         <NavLinks>
           <HeaderMenu/>
         </NavLinks>
       </StyledHeader>
+      
       <HeaderDescription>{getDescription()}</HeaderDescription>
-    </div>
+    </HeaderWrapper>
   )
 }
 

@@ -7,28 +7,38 @@ const ContactContainer = styled.div`
   gap: 2rem;
 `;
 
-const ContactItem = styled.div`
+const ContactLink = styled.a`
   display: flex;
   align-items: center;
   color: var(--color-grey-900);
   font-size: 1.6rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
 
   svg {
-    margin-right: 0.5rem;
+    margin-right: 0.8rem;
+    color: var(--color-green-900); 
+  }
+
+  &:hover {
+    color: var(--color-green-900);
+    transform: translateY(-2px);
   }
 `;
 
 function ContactInfo({ phone, email }) {
+  const phoneLink = phone.replace(/\s+/g, '');
+
   return (
     <ContactContainer>
-      <ContactItem>
+      <ContactLink href={`tel:${phoneLink}`}>
         <FaPhone />
         {phone}
-      </ContactItem>
-      <ContactItem>
+      </ContactLink>
+      <ContactLink href={`mailto:${email}`}>
         <FaEnvelope />
         {email}
-      </ContactItem>
+      </ContactLink>
     </ContactContainer>
   );
 }

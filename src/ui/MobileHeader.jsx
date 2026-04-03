@@ -27,14 +27,9 @@ const LogoContainer = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
-  background-color: var(--color-green-100);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--color-grey-900);
 `;
 
 const HamburgerMenu = styled.div`
@@ -76,10 +71,13 @@ const MenuLink = styled(Link)`
 
 const HeaderDescription = styled.div`
   font-size: 1.8rem;
+  font-weight: 500;
   text-align: center;
-  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
   background-color: var(--color-green-100);
   color: var(--color-grey-900);
+  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 `;
 
 const HeaderMenuContainer = styled.div`

@@ -21,6 +21,7 @@ const GlobalStyles = addGlobalStyle`
   --color-blue-300:rgb(35, 140, 197);
   --color-green-100:rgb(34, 221, 100);
   --color-green-700:rgb(24, 150, 70);
+  --color-green-900:rgb(13, 116, 49);
   --color-yellow-100: #fef9c3;
   --color-yellow-700: #a16207;
   --color-silver-100: #e5e7eb;
@@ -60,6 +61,7 @@ const GlobalStyles = addGlobalStyle`
 --color-blue-700: #e0f2fe;
 --color-green-100:rgb(40, 134, 76);
 --color-green-700:rgb(34, 187, 88);
+--color-green-900:rgb(45, 228, 109);
 --color-yellow-100: #854d0e;
 --color-yellow-700: #fef9c3;
 --color-silver-100: #374151;

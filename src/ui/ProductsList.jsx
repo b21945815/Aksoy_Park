@@ -85,12 +85,12 @@ const ProductsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  margin-top: 50px;
 
   @media (max-width: 800px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `
+
 
 const ProductCard = styled.div`
   position: relative;
@@ -120,32 +120,29 @@ const ProductName = styled.p`
 `
 
 const BackButton = styled.button`
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-grey-200);
   color: var(--color-grey-800);
   border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.6rem;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  margin-bottom: 20px;
+  transition: all 0.3s;
 
   &:hover {
-    background-color: #005f73;
-    transform: scale(1.1);
+    background-color: var(--color-green-100);
+    color: var(--color-grey-900);
   }
 
   @media (min-width: 769px) {
     display: none;
   }
 `
-
 export default function ProductsList ({ useProducts, mainCategory, closeThisPage, onMobileClose }) {
   const { products, isLoading, error } = useProducts()
   const [selectedCategory, setSelectedCategory] = useState(null)

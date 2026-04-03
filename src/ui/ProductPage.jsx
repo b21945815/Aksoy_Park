@@ -24,6 +24,8 @@ const ModalContent = styled.div`
   background-color: var(--color-grey-100);
   padding: 2rem;
   z-index: 1001;
+  height: 100dvh;
+  overscroll-behavior: none;
 `;
 
 const CloseButton = styled.button`

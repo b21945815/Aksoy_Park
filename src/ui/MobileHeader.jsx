@@ -53,7 +53,7 @@ const MenuContainer = styled.div`
   padding-top: 2rem;
   padding-left: 2rem;
   transition: transform 0.3s ease-in-out;
-  transform: ${(props) => (props.isOpen ? 'translateX(0)' : 'translateX(-100%)')};
+  transform: ${(props) => (props.$isOpen ? 'translateX(0)' : 'translateX(-100%)')};
   z-index: 1000;
 `;
 
@@ -146,7 +146,7 @@ function MobileHeader() {
         </HeaderMenuContainer>
       </StyledHeader>
 
-      <MenuContainer isOpen={isMenuOpen}>
+      <MenuContainer $isOpen={isMenuOpen}>
         <BackButton onClick={toggleMenu}>
           <FiChevronLeft size={30} color="var(--color-grey-900)" />
         </BackButton>

@@ -15,19 +15,9 @@ const FullscreenImageWrapper = styled.div`
   z-index: 999;
 `
 
-const FullscreenImage = styled.img`
-  max-width: 90%;
-  max-height: 90%;
-  
-  @media (max-width: 1500px) and (min-width: 800px) {
-    max-width: 75%; 
-    max-height: 80%;
-  }
-`
-
 const DetailsButton = styled(motion.button)`
   position: absolute;
-  ${props => (props.isMobile ? 'bottom: 20px;' : 'right: 30px; bottom: 30px;')}
+  ${props => (props.$isMobile ? 'bottom: 20px;' : 'right: 30px; bottom: 30px;')}
   padding: 1.2rem 2.4rem;
   background-color: var(--color-green-700);
   color: white;
@@ -72,7 +62,7 @@ export default function FullscreenImagePage({ closeFullscreen, link, name, mainC
       />
       {mainCategory && (
         <DetailsButton 
-          isMobile={isMobile} 
+          $isMobile={isMobile} 
           onClick={goToDetails}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}

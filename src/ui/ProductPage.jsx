@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FiX } from 'react-icons/fi'; 
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -30,33 +31,33 @@ const ModalContent = styled.div`
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: none;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--color-grey-0); /* Butonu hafif belirginleştirir */
   border: none;
   cursor: pointer;
-  font-size: 5rem;
   color: var(--color-grey-700);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5rem;
-  height: 5rem; 
+  width: 4.5rem;
+  height: 4.5rem; 
   border-radius: 50%;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
+  z-index: 9999; 
+  box-shadow: var(--shadow-sm); 
 
-  &:hover {
-    background-color: var(--color-grey-800);
+  &:hover, &:active {
+    background-color: var(--color-grey-200);
+  }
+
+  & svg {
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   &:focus {
     outline: none;
-  }
-
-  &::before {
-    content: '×';
-    font-size: 5rem; 
-    color: inherit;
   }
 `;
 
@@ -70,7 +71,9 @@ const ProductPage = ({ onClose, children }) => {
     >
       <ModalOverlay onClick={onClose} />
       <ModalContent>
-        <CloseButton onClick={onClose}></CloseButton>
+        <CloseButton onClick={onClose}>
+          <FiX />
+        </CloseButton>
         {children}
       </ModalContent>
     </motion.div>

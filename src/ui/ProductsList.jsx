@@ -29,7 +29,7 @@ const Sidebar = styled.div`
   height: 100vh;
 
   @media (max-width: 800px) {
-    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+    display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
     width: 100%;
     height: 100%;
     position: relative;
@@ -178,7 +178,7 @@ export default function ProductsList ({ useProducts, mainCategory, closeThisPage
   }
   return (
     <PageContainer>
-      <Sidebar isOpen={window.innerWidth >= 769 || !selectedCategory}>
+      <Sidebar $isOpen={window.innerWidth >= 769 || !selectedCategory}>
         {products.map(({ category }) => (
           <CategoryButton
             key={category}

@@ -93,7 +93,7 @@ const Thumbnail = styled.img`
   object-fit: cover;
   margin-right: 10px;
   cursor: pointer;
-  border: 2px solid ${props => (props.isSelected ? '#007bff' : 'transparent')};
+  border: 2px solid ${props => (props.$isSelected ? '#007bff' : 'transparent')};
   border-radius: 5px;
 
   &:hover {
@@ -167,7 +167,7 @@ function ChildrenParkProduct () {
                     key={index}
                     src={url}
                     alt={`Thumbnail ${index + 1}`}
-                    isSelected={mainImage === url}
+                    $isSelected={mainImage === url}
                     onClick={() => handleThumbnailClick(url)}
                   />
                 ))}

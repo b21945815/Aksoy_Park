@@ -4,7 +4,7 @@ import ChildrenParkProductSubInformation from "./ChildrenParkProductSubInformati
 
 const Container = styled.div`
   display: flex;
-  flex-direction: ${({ isMobile }) => (isMobile ? 'column' : 'row')};
+  flex-direction: ${({ $isMobile }) => ($isMobile ? 'column' : 'row')};
   align-items: center;
   gap: 20px;
   padding: 20px;
@@ -13,7 +13,7 @@ const Container = styled.div`
 `;
 const ChildrenParkProductInformation = ({ item, isMobile }) => {
   return (
-    <Container isMobile={isMobile}>
+    <Container $isMobile={isMobile}>
       <ChildrenParkProductMainInformation otherMessage={item.isWood}/>
       <ChildrenParkProductSubInformation item={item}/>
     </Container>

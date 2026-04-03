@@ -6,7 +6,7 @@ import FullscreenImagePage from './FullscreenImagePage'
 
 const PageContainer = styled.div`
   display: flex;
-  height: 100vh;
+  height: 100dvh; 
   width: 100%;
   overflow-y: auto;
   
@@ -22,11 +22,11 @@ const Sidebar = styled.div`
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 1rem; 
+  gap: 1rem;
   border-right: 1px solid var(--color-grey-200);
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100dvh;
 
   @media (max-width: 800px) {
     display: ${({ $isOpen }) => ($isOpen ? 'flex' : 'none')};
@@ -34,11 +34,10 @@ const Sidebar = styled.div`
     height: 100%;
     position: relative;
     background: transparent;
-    padding: 60px 15px 20px; 
+    padding: 80px 15px 20px; 
     border-right: none;
   }
 `
-
 const CategoryButton = styled.button`
   background: transparent;
   color: var(--color-grey-700);
@@ -47,7 +46,7 @@ const CategoryButton = styled.button`
   cursor: pointer;
   width: 100%;
   border-radius: 8px;
-  transition: all 0.2s ease;
+  transition: all 0.1s ease;
   font-size: 1.6rem;
   font-weight: 500;
   text-align: left;
@@ -55,11 +54,42 @@ const CategoryButton = styled.button`
   justify-content: space-between;
   align-items: center;
 
-  &:hover, &:focus {
+  /* SENARYO 1: Masaüstü / Fare Kullanıcıları İçin Hover */
+  /* Sadece fare destekleyen cihazlarda hover efekti uygula (Takılı kalmayı engeller) */
+  @media (hover: hover) {
+    &:hover {
+      background: var(--color-green-100);
+      color: var(--color-grey-900);
+      border-color: var(--color-green-700);
+    }
+  }
+
+  /* SENARYO 2: "Adam dokunurken rengi yeşil olsun" isteği (Global Active) */
+  /* ACTIVE durumu: Hem fare ile TIKLARKEN hem de mobil ile DOKUNURKEN (parmak basılıyken) çalışır. */
+  &:active {
+    /* Dokunma/Tıklama süresince daha belirgin bir yeşil */
+    background-color: var(--color-green-200) !important; 
+    color: var(--color-grey-900) !important;
+    border-color: var(--color-green-700) !important;
+    transform: scale(0.98); 
+  }
+
+  /* Focus durumu klavye erişilebilirliği için */
+  &:focus-visible {
     background: var(--color-green-100);
     color: var(--color-grey-900);
     border-color: var(--color-green-700);
+    outline: none;
   }
+
+  /* SENARYO 3: Aktif/Seçili olma durumu (Dokunma bittikten sonraki hal) */
+  ${({ $isSelected }) =>
+    $isSelected &&
+    `
+    background: var(--color-green-500) !important; /* Seçiliyken kalıcı solid yeşil */
+    color: white !important;
+    border-color: var(--color-green-700) !important;
+  `}
 
   &::after {
     content: '›';
@@ -71,7 +101,7 @@ const CategoryButton = styled.button`
     background: var(--color-grey-0);
     border: 1px solid var(--color-grey-200);
     box-shadow: var(--shadow-sm);
-    padding: 1.8rem 2rem; 
+    padding: 1.8rem 2rem;
     border-radius: 12px;
   }
 `
@@ -133,6 +163,8 @@ const BackButton = styled.button`
   cursor: pointer;
   margin-bottom: 20px;
   transition: all 0.3s;
+  
+  margin-top: 20px; 
 
   &:hover {
     background-color: var(--color-green-100);
@@ -143,6 +175,7 @@ const BackButton = styled.button`
     display: none;
   }
 `
+
 export default function ProductsList ({ useProducts, mainCategory, closeThisPage, onMobileClose }) {
   const { products, isLoading, error } = useProducts()
   const [selectedCategory, setSelectedCategory] = useState(null)
